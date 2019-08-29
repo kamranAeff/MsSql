@@ -11,7 +11,7 @@ Verilənlər Bazası(VB) = DataBase (DB)
   - Yeni cədvəl yaratmaq
   - Mövcud cədvələ yeni sütunun əlavə edilməsi dəyişdirilib və silinməsi
   - Məhdudlaşdırıcılar - Constraints
-    - Not Null mehdudlaşdırıcısı
+    - Not Null məhdudlaşdırıcısı
     - Təkrarların məhdudlaşdırılması (Unique Key)
     - Əsas açar (Primary Key)
     - Şərt məhdudlaşdırıcısı (Check Constraints)
