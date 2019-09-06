@@ -27,7 +27,7 @@ Server və management studio qurulduqdan sonra isə biz management studionu qoş
     go
 ```
 
-Verilənlər bazasının adını da həmçinin dəyişə bilərik.Lakin bu tövsiyyə olunmur.Çünki resurs adları köhnə database adını əsas götürəcək.Aşağıdakı kodda istifadə edərək bu əməliyyatı icra edə bilərik.
+Verilənlər bazasının adını da həmçinin dəyişə bilərik.Lakin bu tövsiyyə olunmur.Çünki resurs adları köhnə verilənlər bazasının adını əsas götürəcək.Aşağıdakı komandadan istifadə edərək bu əməliyyatı icra edə bilərik.
 
 
 ```html
