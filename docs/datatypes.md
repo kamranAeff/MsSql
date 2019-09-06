@@ -4,7 +4,7 @@ Sql Serverdə Məlumatların saxlanılmasında əsas və yeganə rolu cədvəll�
 
 ## String Datatypes
 
-<table>
+<table width="100%">
   <thead>
   <tr>
      <th>
