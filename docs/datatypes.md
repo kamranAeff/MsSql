@@ -3,7 +3,9 @@
 Sql Serverdə Məlumatların saxlanılmasında əsas və yeganə rolu cədvəllər(Table) oynayır.Məlumatlar cədvəllərdə sətirlər(row/record) şəklində saxlanılır. Və hər məlumat hissələrə (xüsusiyyətlərə) ayrılaraq saxlanılır.Bu hissələrin də təyinatına görə yaddaşda saxlanılması zərürəti yaradılır.Bu zərurəti qarşılamaq üçün verilənlərin tipi anlayışı meydana gəlir.Verilənlərin tipləri təyinatına görə aşağıdakı növlərə bölünür:
 
 ## String Datatypes
+
 #### Aşağıda göstərilən mətn tipləri mövcuddur
+
 <table>
   <thead>
   <tr>
@@ -15,54 +17,54 @@ Sql Serverdə Məlumatların saxlanılmasında əsas və yeganə rolu cədvəll�
   <tbody>
   <tr>
     <td>CHAR(<em>size</em>)</td>
-    <td>Maximum size of 8,000 characters.</td>
-    <td>Where <strong><em>size</em></strong> is the number of characters to store. Fixed-length. Space padded on right to equal <em><strong>size</strong></em> characters. Non-Unicode data.</td>
+    <td>Maksimal simvol sayı 8000-dir.</td>
+    <td>Verdiyimiz ölçü qədər(Fixed-length) yaddaşda yer zəbt edir hər sətir üçün.Əgər **CHAR(8)** yazıb 5 simvolluq "dərs" sözünü saxlayırıqsa qalan 3 simvolu boşluqla doldurur.Unikod məlumatları saxlamır.</td>
   </tr>
   <tr>
     <td>VARCHAR(<em>size</em>) or VARCHAR(max)</td>
-    <td>Maximum size of 8,000 or max characters.</td>
-    <td>Where <strong><em>size</em></strong> is the number of characters to store. Variable-length. If <em>max</em> is specified, the maximum number of characters is 2GB. Non-Unicode data.</td>
+    <td>Maksimal simvol sayı 8000-dir.</td>
+    <td><strong>CHAR</strong>-tipindən fərqli olaraq verdiyimiz ölçü qədər yox məlumatın ölçüsü qədər(Variable-length) yaddaşda yer zəbt edir hər sətir üçün.Əgər **VARCHAR(8)** yazıb 5 simvolluq "dərs" sözünü saxlayırıqsa qalan 3 simvolluq yeri azad buraxır.<strong>VARCHAR(max)</strong> deyə təyin etdikdə isə maksimal 2GB-lıq məlumat yadda saxlaya bilərik.Unikod məlumatları saxlamır.</td>
   </tr>
   <tr>
     <td>TEXT</td>
-    <td>Maximum size of 2GB.</td>
-    <td>Variable-length. Non-Unicode data.</td>
+    <td>Maksimal məlumat ölçüsü 2GB-dır.</td>
+    <td>Variable-length məlumat tipidir. Unikod məlumatları saxlamır.</td>
   </tr>
   <tr>
     <td>NCHAR(<em>size</em>)</td>
-    <td>Maximum size of 4,000 characters.</td>
-    <td>Fixed-length. Unicode data.</td>
+    <td>Maksimal simvol sayı 4000-dir.</td>
+    <td>Fixed-length məlumat tipidir. Unikod məlumatları saxlayır.</td>
   </tr>
   <tr>
     <td>NVARCHAR(<em>size</em>) or NVARCHAR(max)</td>
-    <td>Maximum size of 4,000 or max characters.</td>
-    <td>Where <strong><em>size</em></strong> is the number of characters to store. Variable-length. If <em>max</em> is specified, the maximum number of characters is 2GB. Unicode data.</td>
+    <td>Maksimal simvol sayı 4000-dir.</td>
+    <td>Variable-length məlumat tipidir.Maksimal 2GB-lıq məlumat yadda saxlaya bilərik.Unikod məlumatları saxlayır.</td>
   </tr>
   <tr>
     <td>NTEXT</td>
-    <td>Maximum size of 1,073,741,823 bytes.</td>
-    <td>Variable length. Unicode data.</td>
+    <td>Maksimal byte sayı 1.073.741.823-dir.</td>
+    <td>Variable-length məlumat tipidir.Unikod məlumatları saxlayır.</td>
   </tr>
   <tr>
     <td>BINARY(<em>size</em>)</td>
-    <td>Maximum size of 8,000 characters.</td>
-    <td>Where <strong><em>size</em></strong> is the number of characters to store. Fixed-length. Space padded on right to equal <em><strong>size</strong></em> characters. Binary data.</td>
+    <td>Maksimal simvol sayı 8000-dir.</td>
+    <td>Fixed-length məlumat tipidir.</td>
   </tr>
   <tr>
     <td>VARBINARY(<em>size</em>) or VARBINARY(max)</td>
-    <td>Maximum size of 8,000 or max characters.</td>
-    <td>Where <strong><em>size</em></strong> is the number of characters to store. Variable-length. If <em>max</em> is specified, the maximum number of characters is 2GB. Non-Binary data.</td>
+    <td>Maksimal simvol sayı 8000-dir.</td>
+    <td>Variable-length məlumat tipidir.<strong>VARBINARY(max)</strong> deyə təyin etdikdə isə maksimal 2GB-lıq məlumat yadda saxlaya bilərik.</td>
   </tr>
   <tr>
     <td>IMAGE</td>
-    <td>Maximum size of 2GB.</td>
-    <td>Variable length . Binary data.</td>
+    <td>Maksimal məlumat ölçüsü 2GB-dır.</td>
+    <td>Variable-length məlumat tipidir.</td>
   </tr>
   </tbody>
 </table>
 
-
 ## Numeric Datatypes
+
 #### Aşağıda göstərilən rəqəmsal tiplər mövcuddur
 
 <table>
