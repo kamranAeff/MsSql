@@ -1,6 +1,6 @@
 # Db əməliyyatları
 
-## Verilənlər bazası nədir? Hansı Verilənlər bazası idarəetməs sistemləri var?
+## Verilənlər bazası nədir? Hansı Verilənlər bazası idarəetmə sistemləri var?
 
 İnformasiya sistemi yaradılarkən məlumatların daimi olaraq saxlanılması şərti meydana gəlir.Bu zaman bizim verilənlər bazalarının idarə edilməsi sistemi seçimi etməmiz lazım gəlir.Hazırda verilənlər bazasının idarə etmə sistemləri kifayət qədərdir.Onlardan aşağıdakıları misal göstərmək olar.
 
@@ -51,8 +51,8 @@ həmçinin aşağıdakı sistem proseduru vasitəsi ilə bu prosesi icra edə bi
     USE master;  
     GO  
     -- EXEC sp_renamedb N'<cari_db_adi>', N'<yeni_db_adi>';  
-	EXEC sp_renamedb N'TestDatabase', N'MyDatabase';  
-	GO
+    EXEC sp_renamedb N'TestDatabase', N'MyDatabase';  
+    GO
 ```
 
 
@@ -62,7 +62,7 @@ Bəzən test müddətində yaratdığımız lazımsız bazaları silmək istəy�
 ```html
     USE master;  
     GO  
-	drop database TestDatabase;	
+    drop database TestDatabase;	
     GO  
 ```
 
