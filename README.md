@@ -1,7 +1,7 @@
 # MsSql
 Verilənlər Bazası(VB) = DataBase (DB)
 
-- Db əməliyyatları
+- [Db əməliyyatları](/docs/database.md)
   - Db yaratmaq
   - Db adını dəyişmək və silmək
 
