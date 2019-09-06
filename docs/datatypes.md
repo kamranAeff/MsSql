@@ -3,7 +3,6 @@
 Sql Serverdə Məlumatların saxlanılmasında əsas və yeganə rolu cədvəllər(Table) oynayır.Məlumatlar cədvəllərdə sətirlər(row/record) şəklində saxlanılır. Və hər məlumat hissələrə (xüsusiyyətlərə) ayrılaraq saxlanılır.Bu hissələrin də təyinatına görə yaddaşda saxlanılması zərürəti yaradılır.Bu zərurəti qarşılamaq üçün verilənlərin tipi anlayışı meydana gəlir.Verilənlərin tipləri təyinatına görə aşağıdakı növlərə bölünür:
 
 ## String Datatypes
-
 #### Aşağıda göstərilən mətn tipləri mövcuddur
 
 <table>
@@ -63,8 +62,8 @@ Sql Serverdə Məlumatların saxlanılmasında əsas və yeganə rolu cədvəll�
   </tbody>
 </table>
 
-## Numeric Datatypes
 
+## Numeric Datatypes
 #### Aşağıda göstərilən rəqəmsal tiplər mövcuddur
 
 <table>
@@ -111,8 +110,8 @@ Sql Serverdə Məlumatların saxlanılmasında əsas və yeganə rolu cədvəll�
     <td>DEC(<em>m</em>,<em>d</em>)</td>
     <td><em><strong>m</strong></em> susmaya görə dəyəri 18 qəbul edilir, əks halda biz qeyd etdiyimiz ölçü.<br>
     <em><strong>d</strong></em> susmaya görə dəyəri 0 qəbul edilir, əks halda biz qeyd etdiyimiz ölçü.</td>
-    <td><em><strong>m</strong></em> ümumi simvol sayıdır <em><strong>d</strong></em> isə kəsr hissəyə aid olan simvol sayı.<br></td>
-    <br>Bu tip Decimal tipin sinonimidir.</td>
+    <td><em><strong>m</strong></em> ümumi simvol sayıdır <em><strong>d</strong></em> isə kəsr hissəyə aid olan simvol sayı.<br>Bu tip Decimal tipin sinonimidir.</td>
+     <td></td>
   </tr>
   <tr>
     <td>NUMERIC(<em>m</em>,<em>d</em>)</td>
@@ -140,6 +139,52 @@ Sql Serverdə Məlumatların saxlanılmasında əsas və yeganə rolu cədvəll�
     <td>MONEY</td>
     <td>-922,337,203,685,477.5808 - 922,337,203,685,477.5807</td>
     <td></td>
+  </tr>
+  </tbody>
+</table>
+
+## Date/Time Datatypes
+#### Aşağıda göstərilən tarix və zaman tiplər mövcuddur
+
+<table>
+  <thead>
+  <tr>
+    <th>Adı</th>
+    <th>Ölçüsü</th>
+    <th>Təyini(tətbiq olunsa)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>DATE</td>
+    <td>'0001-01-01' - '9999-12-31'.</td>
+    <td>Görünüşü 'YYYY-MM-DD'</td>
+  </tr>
+  <tr>
+    <td>DATETIME</td>
+    <td>'1753-01-01 00:00:00' - '9999-12-31 23:59:59'.<br>
+    <td>Görünüşü 'YYYY-MM-DD hh:mm:ss[.mmm]'</td>
+  </tr>
+  <tr>
+    <td>DATETIME2(<em>saniyə dəqiqlik dərəcəsi</em>)</td>
+    <td>'0001-01-01' - '9999-12-31'.</td>
+    <td>Görünüşü 'YYYY-MM-DD hh:mm:ss[.fractional seconds]'</td>
+  </tr>
+  <tr>
+    <td>SMALLDATETIME</td>
+    <td>'1900-01-01' - '2079-06-06'.</td>
+    <td>Görünüşü 'YYYY-MM-DD hh:mm:ss'</td>
+  </tr>
+  <tr>
+    <td>TIME</td>
+    <td>'00:00:00.0000000' - '23:59:59.9999999'</td>
+    <td>Görünüşü 'YYYY-MM-DD hh:mm:ss[.nnnnnnn]'</td>
+  </tr>
+  <tr>
+    <td>DATETIMEOFFSET(<em>saniyə dəqiqlik dərəcəsi</em>)</td>
+    <td>'0001-01-01' - '9999-12-31'.<br>
+        Zonaya görə saat fərqi -14:00 to +14:00.</td>
+    <td>Görünüşü 'YYYY-MM-DD hh:mm:ss[.nnnnnnn]' [{+|-}hh:mm]</td>
   </tr>
   </tbody>
 </table>
