@@ -18,12 +18,12 @@ Sql Serverdə Məlumatların saxlanılmasında əsas və yeganə rolu cədvəll�
   <tr>
     <td>CHAR(<em>size</em>)</td>
     <td>Maksimal simvol sayı 8000-dir.</td>
-    <td>Verdiyimiz ölçü qədər(Fixed-length) yaddaşda yer zəbt edir hər sətir üçün.Əgər **CHAR(8)** yazıb 5 simvolluq "dərs" sözünü saxlayırıqsa qalan 3 simvolu boşluqla doldurur.Unikod məlumatları saxlamır.</td>
+    <td>Verdiyimiz ölçü qədər(Fixed-length) yaddaşda yer zəbt edir hər sətir üçün.Əgər <strong>CHAR(8)</strong> yazıb 5 simvolluq "dərs" sözünü saxlayırıqsa qalan 3 simvolu boşluqla doldurur.Unikod məlumatları saxlamır.</td>
   </tr>
   <tr>
     <td>VARCHAR(<em>size</em>) or VARCHAR(max)</td>
     <td>Maksimal simvol sayı 8000-dir.</td>
-    <td><strong>CHAR</strong>-tipindən fərqli olaraq verdiyimiz ölçü qədər yox məlumatın ölçüsü qədər(Variable-length) yaddaşda yer zəbt edir hər sətir üçün.Əgər **VARCHAR(8)** yazıb 5 simvolluq "dərs" sözünü saxlayırıqsa qalan 3 simvolluq yeri azad buraxır.<strong>VARCHAR(max)</strong> deyə təyin etdikdə isə maksimal 2GB-lıq məlumat yadda saxlaya bilərik.Unikod məlumatları saxlamır.</td>
+    <td><strong>CHAR</strong>-tipindən fərqli olaraq verdiyimiz ölçü qədər yox məlumatın ölçüsü qədər(Variable-length) yaddaşda yer zəbt edir hər sətir üçün.Əgər <strong>VARCHAR(8)</strong> yazıb 5 simvolluq "dərs" sözünü saxlayırıqsa qalan 3 simvolluq yeri azad buraxır.<strong>VARCHAR(max)</strong> deyə təyin etdikdə isə maksimal 2GB-lıq məlumat yadda saxlaya bilərik.Unikod məlumatları saxlamır.</td>
   </tr>
   <tr>
     <td>TEXT</td>
