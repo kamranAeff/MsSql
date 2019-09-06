@@ -9,9 +9,9 @@ Sql Serverdə Məlumatların saxlanılmasında əsas və yeganə rolu cədvəll�
 <table>
   <thead>
   <tr>
-    <th>Data Type Syntax</th>
-    <th>Maximum Size</th>
-    <th>Explanation</th>
+    <th>Adı</th>
+    <th>Ölçüsü</th>
+    <th>Təyini</th>
   </tr>
   </thead>
   <tbody>
@@ -70,79 +70,76 @@ Sql Serverdə Məlumatların saxlanılmasında əsas və yeganə rolu cədvəll�
 <table>
   <thead>
   <tr>
-    <th>Data Type Syntax</th>
-    <th>Maximum Size</th>
-    <th>Explanation</th>
+    <th>Adı</th>
+    <th>Ölçüsü</th>
+    <th>Təyini</th>
   </tr>
   </thead>
   <tbody>
   <tr>
     <td>BIT</td>
-    <td>Integer that can be 0, 1, or NULL.</td>
-    <td>&nbsp;</td>
+    <td>Tam ədədlərdən 0, 1, ya da NULL qiymətlərini alır.</td>
+    <td></td>
   </tr>
   <tr>
     <td>TINYINT</td>
-    <td>0 to 255</td>
-    <td>&nbsp;</td>
+    <td>0 - 255</td>
+    <td></td>
   </tr>
   <tr>
     <td>SMALLINT</td>
-    <td>-32768 to 32767</td>
-    <td>&nbsp;</td>
+    <td>-32768 - 32767</td>
+    <td></td>
   </tr>
   <tr>
     <td>INT</td>
-    <td>-2,147,483,648 to 2,147,483,647</td>
-    <td>&nbsp;</td>
+    <td>-2,147,483,648 - 2,147,483,647</td>
+    <td></td>
   </tr>
   <tr>
     <td>BIGINT</td>
-    <td>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
-    <td>&nbsp;</td>
+    <td>-9,223,372,036,854,775,808 - 9,223,372,036,854,775,807</td>
+    <td></td>
   </tr>
   <tr>
     <td>DECIMAL(<em>m</em>,<em>d</em>)</td>
-    <td><em><strong>m</strong></em> defaults to 18, if not specified.<br>
-    <em><strong>d</strong></em> defaults to 0, if not specified.</td>
-    <td>Where <em><strong>m</strong></em> is the total digits and <em><strong>d</strong></em> is the number of digits after the decimal.<br></td>
+    <td><em><strong>m</strong></em> susmaya görə dəyəri 18 qəbul edilir, əks halda biz qeyd etdiyimiz ölçü.<br>
+    <em><strong>d</strong></em> susmaya görə dəyəri 0 qəbul edilir, əks halda biz qeyd etdiyimiz ölçü.</td>
+    <td><em><strong>m</strong></em> ümumi simvol sayıdır <em><strong>d</strong></em> isə kəsr hissəyə aid olan simvol sayı.<br></td>
   </tr>
   <tr>
     <td>DEC(<em>m</em>,<em>d</em>)</td>
-    <td><em><strong>m</strong></em> defaults to 18, if not specified.<br>
-    <em><strong>d</strong></em> defaults to 0, if not specified.</td>
-    <td>Where <em><strong>m</strong></em> is the total digits and <em><strong>d</strong></em> is the number of digits after the decimal.<br>
-    <br>
-        This is a synonym for the DECIMAL datatype.</td>
+    <td><em><strong>m</strong></em> susmaya görə dəyəri 18 qəbul edilir, əks halda biz qeyd etdiyimiz ölçü.<br>
+    <em><strong>d</strong></em> susmaya görə dəyəri 0 qəbul edilir, əks halda biz qeyd etdiyimiz ölçü.</td>
+    <td><em><strong>m</strong></em> ümumi simvol sayıdır <em><strong>d</strong></em> isə kəsr hissəyə aid olan simvol sayı.<br></td>
+    <br>Bu tip Decimal tipin sinonimidir.</td>
   </tr>
   <tr>
     <td>NUMERIC(<em>m</em>,<em>d</em>)</td>
-    <td><em><strong>m</strong></em> defaults to 18, if not specified.<br>
-    <em><strong>d</strong></em> defaults to 0, if not specified.</td>
-    <td>Where <em><strong>m</strong></em> is the total digits and <em><strong>d</strong></em> is the number of digits after the decimal.<br>
-      <br>
-This is a synonym for the DECIMAL datatype.</td>
+    <td><em><strong>m</strong></em> susmaya görə dəyəri 18 qəbul edilir, əks halda biz qeyd etdiyimiz ölçü.<br>
+    <em><strong>d</strong></em> susmaya görə dəyəri 0 qəbul edilir, əks halda biz qeyd etdiyimiz ölçü.</td>
+    <td><em><strong>m</strong></em> ümumi simvol sayıdır <em><strong>d</strong></em> isə kəsr hissəyə aid olan simvol sayı.<br>
+    <br>Bu tip Decimal tipin sinonimidir.</td>
   </tr>
   <tr>
     <td>FLOAT(<em>n</em>)</td>
-    <td>Floating point number.<br>
-     <em><strong>n</strong></em> defaults to 53, if not specified.</td>
-    <td>Where <em><strong>n</strong></em> is the number of number of bits to store in scientific notation.</td>
+    <td>Sürüşkən nöqtəli ədədir.<br> <em><strong>n</strong></em> susmaya görə dəyəri 53 qəbul edilir, əks halda biz qeyd etdiyimiz ölçü.</td>
+    <td></td>
   </tr>
   <tr>
     <td>REAL</td>
-    <td>Equivalent to FLOAT(24)</td>
-    <td>&nbsp;</td>
+    <td>FLOAT(24)`ə ekvavalentdir</td>
+    <td></td>
   </tr>
   <tr>
     <td>SMALLMONEY</td>
-    <td>- 214,748.3648 to 214,748.3647</td>
-    <td>&nbsp;</td>
+    <td>- 214,748.3648 - 214,748.3647</td>
+    <td></td>
   </tr>
   <tr>
     <td>MONEY</td>
-    <td>-922,337,203,685,477.5808 to 922,337,203,685,477.5807</td>
-    <td>&nbsp;</td>
+    <td>-922,337,203,685,477.5808 - 922,337,203,685,477.5807</td>
+    <td></td>
   </tr>
   </tbody>
 </table>
