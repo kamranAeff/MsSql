@@ -59,6 +59,26 @@ yenidən bu kodu çağırası olsaq <b>Name</b> sütununun boş buraxılma icaz�
 ```  
 > Cannot insert the value NULL into column 'Name', table 'Intelect.dbo.Category'; column does not allow nulls. INSERT fails.
 
+Bəzi hallarda isə boş buraxılması imkanı olmayan sütun üçün susmaya görə təyin etmək olar.Misal üçün sətrin yaradılma tarixi.Yəni əgər bizə maraqlıdırsa ki bu kateqoriya hansı tarixdə yaradılıb onda aşağıdakı kodla cədvələ əməliyyat tarixini qeyd etmək üçün yeni sütun əlavə edirik.Və eyni anda susmaya görə dəyərini vermək üçün **getdate()** funksiyasından istifadə edirik.
+
+```
+    use [Intelect];
+    go
+    ALTER TABLE [Category]
+    ADD [CreatedDate] date NOT NULL DEFAULT getdate();
+    go
+```  
+> İndi yeni sətir əlavə etsək görəcəyikki yeni yaratdığımız **CreatedDate** sütununu not null olaraq qeyd etdiyimizə baxmayaraq,onu qeyd etmədən yeni sətir insert etdikdə hec bir problemlə qarşılaşmadıq.
+
+```
+    use [Intelect];
+    go
+    insert into [Category]([Id],[Name]) values(2,N'Ofis Ləvazimatları');
+    go
+```  
+
+Yuxarıdakı komandadan sonra cədvəldəki məlumatları yoxlasaq görəcəyikki əməliyyat tarixi avtomatik qeyd olunub.
+
 
 <h2 id="uniquekey"></h2>
 
