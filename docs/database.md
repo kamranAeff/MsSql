@@ -23,7 +23,7 @@ Server və management studio qurulduqdan sonra isə biz management studionu qoş
 ```html
     use [master];
     go
-    create database MyDatabase;
+    create database Intelect;
     go
 ```
 
@@ -34,13 +34,13 @@ Verilənlər bazasının adını da həmçinin dəyişə bilərik.Lakin bu tövs
     USE master;  
     GO  
     -- ALTER DATABASE <cari_db_adi> SET SINGLE_USER WITH ROLLBACK IMMEDIATE
-    ALTER DATABASE MyDatabase SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+    ALTER DATABASE Intelect SET SINGLE_USER WITH ROLLBACK IMMEDIATE
     GO
     -- ALTER DATABASE <cari_db_adi> MODIFY NAME = <yeni_db_adi> ;
-    ALTER DATABASE MyDatabase MODIFY NAME = TestDatabase ;
+    ALTER DATABASE Intelect MODIFY NAME = TestIntelect ;
     GO  
     --ALTER DATABASE <yeni_db_adi> SET MULTI_USER
-    ALTER DATABASE TestDatabase SET MULTI_USER
+    ALTER DATABASE TestIntelect SET MULTI_USER
     GO
 ```
 
@@ -51,7 +51,7 @@ həmçinin aşağıdakı sistem proseduru vasitəsi ilə bu prosesi icra edə bi
     USE master;  
     GO  
     -- EXEC sp_renamedb N'<cari_db_adi>', N'<yeni_db_adi>';  
-    EXEC sp_renamedb N'TestDatabase', N'MyDatabase';  
+    EXEC sp_renamedb N'TestIntelect', N'Intelect';  
     GO
 ```
 
@@ -62,7 +62,7 @@ Bəzən test müddətində yaratdığımız lazımsız bazaları silmək istəy�
 ```html
     USE master;  
     GO  
-    drop database TestDatabase;	
+    drop database Intelect;	
     GO  
 ```
 
