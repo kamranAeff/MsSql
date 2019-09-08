@@ -50,7 +50,7 @@ Yaxşı bəs cədvəllər üzrə əməliyyatlar deyəndə nə nəzərdə tuturuq
 
 ## Cədvəl yaratmaq üçün nə etməli?
 
-Yuxarıdakı ətraflı məlumatdan sonra necə yeni bir cədvəl yarada bilərik ondan danışaq.İlk öncə yadda saxlamaq lazımdır ki, <b>Sql Server Management Studio</b> vasitəsi ilə visual şəkildə edə biləcəyimiz hər şey kimi, yeni cədvəli də visual şəkildə yatarmaq olar.Həmçinin eyni işi TSQL - kodları vasitəsi ilə də bunu icra edə bilərik.Misal üçün  <u>Category</u> cədvəlini gəlin daha Öncə yatarmış olduğumuz <u>Intelect</u> verilənlər bazasında yaradaq.
+Yuxarıdakı ətraflı məlumatdan sonra necə yeni bir cədvəl yarada bilərik ondan danışaq.İlk öncə yadda saxlamaq lazımdır ki, vasitəsi ilə visual şəkildə edə biləcəyimiz hər şey kimi, yeni cədvəli də visual şəkildə yatarmaq olar.Həmçinin eyni işi TSQL - kodları vasitəsi ilə də bunu icra edə bilərik.Misal üçün  <b>Category</b> cədvəlini gəlin daha öncə yatarmış olduğumuz <b>Intelect</b> verilənlər bazasında yaradaq.
 
 
 ```html
@@ -58,7 +58,45 @@ Yuxarıdakı ətraflı məlumatdan sonra necə yeni bir cədvəl yarada bilərik
     go
     CREATE TABLE Category(
         Id int,
-        Name nvarchar(150)
+        Name varchar(150)
     );
     go
 ```
+
+Burdakı kodu oxumağa çalışsaq görəcəyikki kateqoriyaları qeyd etmək üçün <b>Category</b> adlı bir cədvəl yaradaraq kateqoriyanın <b id="modify">sıra nömrəsi (<em>Id</em>)</b> və <b>adını (<em>Name</em>)</b> qeyd etmək üçün sahələr ayırmışıq.Və informasiya sisteminin genişliyindən asılı olaraq bu sahələr arta bilər.Data strukturunun dəyişdirilib artırılması qərarını aldıqda isə biz rahat şəkildə T-SQL kodları vasitəsi bunu aşağıdakı kimi icra edə bilərsiz.
+
+```html
+    use [Intelect];
+    go
+    ALTER TABLE Category
+    ADD SubName varchar(200);
+    go
+```
+
+Beləliklə mövcud olan <b>Category</b> cədvəlinə <b>SubName</b> sütununu(column) əlavə etdik.
+
+Və ya əksinə cədvəldə mövcud sütunu silə bilərik.Lakin bu qərarı verərkən ətraflı yoxlamaq lazımdır.Məlumat itkisi olmadığı halda bu əməliyyatı edə bilərik.
+
+
+```html
+    use [Intelect];
+    go
+    ALTER TABLE Category
+    DROP COLUMN SubName;
+    go
+```
+
+
+Biraz öncə əlavə etdiyimiz sütununu(column) cədvəldən sildik.
+
+Yaxud da cədvəlin sütunları üzərində dəyişiklik edə bilərik.Misal üçün <b>Name</b> sütununun məlumat tipini dəyişərək <b>unicode tipli</b> məlumatlar qeyd edə bilməmiz üçün şərait yaradırıq.
+
+
+```html
+    use [Intelect];
+    go
+    ALTER TABLE Category
+    ALTER COLUMN Name nvarchar(150);
+    go
+```
+
