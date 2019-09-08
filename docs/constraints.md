@@ -196,10 +196,10 @@ indi isə yoxlamaq məqsədi ilə aşağıdakı kodu icra etsəniz xəta ilə qa
 <h2 id="foreignkey">Xarici açar məhdudlaşdırıcısı (Foreign Key Constraints)</h2>
 Bəzən bir obyekt haqqında bütün məlumatların bir cədvəəlin eyni sətrində saxlanılması təkrarların artması və məlumatın idarə olunmasını çətinləşdirir.Bir sözlə relyasiyasız verilənlərin yaranmasına gətirib çıxarır.Bu zaman məlumatın nizamlı şəkildə bölünməsi lazım olur və bunun idarə edilməsi məlumat bütövlüyünün qorunması üçün  "Foreign Key Constraints"lərdən istifadə edirik.Misal üçün istifadəçinin rolunu təyin etmək üçün "Role" cədvəli yaradıb mövcud rolları o cədvəldə saxlayacağıq.Sonra isə "User" cədvəlinə "RoleId" sütunu əlavə edib əlaqələndirəcəyik.Aşağıdakı komandaları ardıcıllıqla izləmək lazımdır.
 
-```html	
-	use [Intelect];
+```html
+    use [Intelect];
     GO
-	--role cədvəli yaradırıq
+    --role cədvəli yaradırıq
     CREATE TABLE [Role](
     [Id] int NOT NULL PRIMARY KEY IDENTITY,
     [Name] nvarchar(150) NOT NULL,
