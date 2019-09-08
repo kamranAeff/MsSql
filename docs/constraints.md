@@ -68,6 +68,16 @@ Bəzi hallarda isə boş buraxılması imkanı olmayan sütun üçün susmaya g�
     ADD [CreatedDate] date NOT NULL DEFAULT getdate();
     go
 ```  
+
+ya da əvvəlcədən mövcud bir sütuna DEFAULT Constraint əlavə edə bilərik
+```
+    use [Intelect];
+    go
+    ALTER TABLE [Category]
+    ADD CONSTRAINT DK_CreatedDate DEFAULT getdate() FOR CreatedDate;
+    go
+```  
+
 > İndi yeni sətir əlavə etsək görəcəyikki yeni yaratdığımız **CreatedDate** sütununu not null olaraq qeyd etdiyimizə baxmayaraq,onu qeyd etmədən yeni sətir insert etdikdə hec bir problemlə qarşılaşmadıq.
 
 ```
@@ -119,7 +129,7 @@ indi aşağıdakı kodları icra etsək 'Ofis Ləvazimatları' adlı kateqoriya 
     use [Intelect];
     go
     -- ilk öncə unikallıq məhdudlaşdırıcısını ləğv edirik
-	ALTER TABLE [Category]
+    ALTER TABLE [Category]
     DROP CONSTRAINT  UCategoryId;
     --sonra Id dəyərinin null olmasının qarşısını alırıq
     ALTER TABLE [Category]
@@ -131,7 +141,7 @@ indi aşağıdakı kodları icra etsək 'Ofis Ləvazimatları' adlı kateqoriya 
 ```  
 
 
-Və ya cədvəli əvvəlcədən bu kemilənləri əsas tutaraq belə yarada bilərdik.
+Və ya cədvəli əvvəlcədən bu keçilənləri əsas tutaraq belə yarada bilərdik.
 
 ```
     use [Intelect];
@@ -144,10 +154,43 @@ Və ya cədvəli əvvəlcədən bu kemilənləri əsas tutaraq belə yarada bil�
     GO
 ```
 
+<h2 id="check">Şərt məhdudlaşdırıcısı (Check Constraints)</h2>
+
+Bu məhdudlaşdırıcı növü daxil edilən məlumatların dəyərlərinin məhdudlaşdırılması üçün istifadə edilir.Yəni əgər biz telefon nömrəsi üçün 13 simvol daxil edilməsini istəyiriksə <b>Check Constraint</b>lərdən istifadə edə bilərik.Və ya e-mail adres ya ip adrres kimi məlumatların daxil edilməsi üçün xüsusi Regular Expression təyin edib məhdudiyyət yarada bilərik.Deyəkki Users cədvəli yaradırıq və <b>LEN</b> funksiyasından istifadə edərək daxil edilən <b>Phone</b> dəyərinin 13 simvoldan az olmasını məhdudlaşdırırıq.
+
+```html
+    use [Intelect];
+    GO
+    CREATE TABLE [User](
+    [Id] int NOT NULL PRIMARY KEY IDENTITY,
+    [Name] nvarchar(150) NOT NULL,
+	[Email] varchar(100) not null,
+	[Phone] char(13) not null CHECK (LEN([Phone]) = 13),
+    [CreatedDate] date NOT NULL default getdate()
+    )
+    GO
+```
+
+indi isə yoxlamaq məqsədi ilə aşağıdakı kodu icra etsəniz xəta ilə qarılaşacağınızı təyin etdiyimiz məhdudlaşdırıcının işə düşdüyünü görəcəksiniz
+
+```html
+    use [Intelect];
+    GO
+    insert into [User]([Name],[Email],[Phone])
+	values(N'Test','test@mail.ru','0551234567');
+    GO
+```
+
+Əgər cədvəli yaradarkən bu məhdudlaşdırıcını təyin etməmişiksə onda aşağıdakı kodla bu məhdudiyyəti icra edə bilərik.
 
 
-
-<h2 id="check"></h2>
+```html
+    use [Intelect];
+    GO
+    ALTER TABLE [User]
+    ADD CONSTRAINT CK_Phone CHECK (LEN([Phone]) = 13);
+    GO
+```
 
 
 <h2 id="foreignkey"></h2>
