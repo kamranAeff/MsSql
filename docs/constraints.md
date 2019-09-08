@@ -193,4 +193,35 @@ indi isə yoxlamaq məqsədi ilə aşağıdakı kodu icra etsəniz xəta ilə qa
 ```
 
 
-<h2 id="foreignkey"></h2>
+<h2 id="foreignkey">Xarici açar məhdudlaşdırıcısı (Foreign Key Constraints)</h2>
+Bəzən bir obyekt haqqında bütün məlumatların bir cədvəəlin eyni sətrində saxlanılması təkrarların artması və məlumatın idarə olunmasını çətinləşdirir.Bir sözlə relyasiyasız verilənlərin yaranmasına gətirib çıxarır.Bu zaman məlumatın nizamlı şəkildə bölünməsi lazım olur və bunun idarə edilməsi məlumat bütövlüyünün qorunması üçün  "Foreign Key Constraints"lərdən istifadə edirik.Misal üçün istifadəçinin rolunu təyin etmək üçün "Role" cədvəli yaradıb mövcud rolları o cədvəldə saxlayacağıq.Sonra isə "User" cədvəlinə "RoleId" sütunu əlavə edib əlaqələndirəcəyik.Aşağıdakı komandaları ardıcıllıqla izləmək lazımdır.
+
+```html	
+	use [Intelect];
+    GO
+	--role cədvəli yaradırıq
+    CREATE TABLE [Role](
+    [Id] int NOT NULL PRIMARY KEY IDENTITY,
+    [Name] nvarchar(150) NOT NULL,
+    [CreatedDate] date NOT NULL default getdate()
+    )
+
+	--user rolunu əlavə edirik
+	insert into [Role]([Name])values(N'User');
+
+	--istifadəçilər cədvəlinə rol kodu sütunu əlavə edirik
+	ALTER TABLE [User]
+	ADD [RoleId] int default 1;
+
+	--İstifadəçilər cədvəlinin Role cədvəli ilə əlaqəsinin yoxlanılması üçün xarici açar məhdudlaçdırıcısından istifadə edirik.
+	ALTER TABLE [User]
+	ADD FOREIGN KEY (RoleId) REFERENCES [Role](Id);
+    GO
+```
+
+yəni əgər **RoleId** sütununa **Role** cədvəlində olmayan bir **Id** dəyəri verərsək əgər, məlumat bütövluyünün qorunmadığından komanda icra olunmayacaq
+
+```html
+    insert into [User]([Name],[Email],[Phone],[RoleId])
+	values(N'Test-2','test2@mail.ru','055-123-45-76',2);
+```
