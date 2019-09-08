@@ -222,6 +222,9 @@ Bəzən bir obyekt haqqında bütün məlumatların bir cədvəəlin eyni sətri
 yəni əgər **RoleId** sütununa **Role** cədvəlində olmayan bir **Id** dəyəri verərsək əgər, məlumat bütövluyünün qorunmadığından komanda icra olunmayacaq
 
 ```html
+    use [Intelect];
+    GO
     insert into [User]([Name],[Email],[Phone],[RoleId])
-	values(N'Test-2','test2@mail.ru','055-123-45-76',2);
+    values(N'Test-2','test2@mail.ru','055-123-45-76',2);
+    GO
 ```
