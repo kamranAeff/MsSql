@@ -56,7 +56,7 @@ yenidən bu kodu çağırası olsaq <b>Name</b> sütununun boş buraxılma icaz�
     go
     insert into [Category]([Id]) values(1);
     go
-```
+```  
     > Cannot insert the value NULL into column 'Name', table 'Intelect.dbo.Category'; column does not allow nulls. INSERT fails.
 
 
