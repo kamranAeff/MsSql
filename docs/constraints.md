@@ -164,8 +164,8 @@ Bu məhdudlaşdırıcı növü daxil edilən məlumatların dəyərlərinin məh
     CREATE TABLE [User](
     [Id] int NOT NULL PRIMARY KEY IDENTITY,
     [Name] nvarchar(150) NOT NULL,
-	[Email] varchar(100) not null,
-	[Phone] char(13) not null CHECK (LEN([Phone]) = 13),
+    [Email] varchar(100) not null,
+    [Phone] char(13) not null CHECK (LEN([Phone]) = 13),
     [CreatedDate] date NOT NULL default getdate()
     )
     GO
@@ -177,7 +177,7 @@ indi isə yoxlamaq məqsədi ilə aşağıdakı kodu icra etsəniz xəta ilə qa
     use [Intelect];
     GO
     insert into [User]([Name],[Email],[Phone])
-	values(N'Test','test@mail.ru','0551234567');
+    values(N'Test','test@mail.ru','0551234567');
     GO
 ```
 
