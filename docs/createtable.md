@@ -103,3 +103,15 @@ Yaxud da cədvəlin sütunları üzərində dəyişiklik edə bilərik.Misal ü�
     go
 ```
 
+
+<h2 id="droptable">Cədvəlin verilənlər bazasından silinməsi</h2>
+
+Bəzən lazımsız cədvəlləri bazadan silməmiz lazım gəlir.Və bu zaman aşağıdakı kodu icra edə bilərik.
+
+```html
+    use [Intelect];
+    go
+    DROP TABLE Category;
+    go
+```
+

@@ -9,7 +9,7 @@ Verilənlər Bazası(VB) = DataBase (DB)
   - [Verilənlərin tipləri - DataTypes](/docs/datatypes.md)
   - Düzgün data tipinin seçilməsi
   - [Yeni cədvəl yaratmaq](/docs/createtable.md)
-  - [Cədvəlin strukturunun dəyişdirilməsi](/docs/createtable.md#modify)
+  - [Cədvəlin strukturunun dəyişdirilməsi və cədvəlin silinməsi](/docs/createtable.md#modify)
   - Məhdudlaşdırıcılar - Constraints
     - Not Null məhdudlaşdırıcısı
     - Təkrarların məhdudlaşdırılması (Unique Key)
