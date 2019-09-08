@@ -101,7 +101,7 @@ məlumat əlavə etsək və id dəyərini eyni saxlasaq bu zaman anomaliya yaran
 	GO
 ```  
 
-indi aşağıdakı kodları icra etsək 'Ofis Ləvazimatları' adlı kateqoriya əlavə olunacaq lakin 'Məişət Əşyaları' kateqoriyasını yükləyərkən unikallığın pozulmasının şahidi olacayıq.Çünki hər ikisinin Id dəyəri 2-dir.'Məişət Əşyaları'-na aid olan Id dəyərini 2 ilə əvəz etsək normal qaydada icra olunacaq.
+indi aşağıdakı kodları icra etsək 'Ofis Ləvazimatları' adlı kateqoriya əlavə olunacaq lakin 'Məişət Əşyaları' kateqoriyasını yükləyərkən unikallığın pozulmasının şahidi olacayıq.Çünki hər ikisinin Id dəyəri 1-dir.'Məişət Əşyaları'-na aid olan Id dəyərini 2 ilə əvəz etsək normal qaydada icra olunacaq.
 
 ```
     use [Intelect];
