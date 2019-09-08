@@ -10,11 +10,12 @@ Verilənlər Bazası(VB) = DataBase (DB)
   - Düzgün data tipinin seçilməsi
   - [Yeni cədvəl yaratmaq](/docs/createtable.md)
   - [Cədvəlin strukturunun dəyişdirilməsi və cədvəlin silinməsi](/docs/createtable.md#modify)
-  - Məhdudlaşdırıcılar - Constraints
-    - Not Null məhdudlaşdırıcısı
-    - Təkrarların məhdudlaşdırılması (Unique Key)
-    - Əsas açar (Primary Key)
-    - Şərt məhdudlaşdırıcısı (Check Constraints)
+  - [Məhdudlaşdırıcılar - Constraints](/docs/constraints.md)
+    - [Default və Not Null məhdudlaşdırıcıları](/docs/constraints.md#notnull)
+    - [Təkrarların məhdudlaşdırılması (Unique Key)](/docs/constraints.md#uniquekey)
+    - [Əsas açar (Primary Key)](/docs/constraints.md#primarykey)
+    - [Şərt məhdudlaşdırıcısı (Check Constraints)](/docs/constraints.md#check)
+    - [Xarici açar məhdudlaşdırıcısı (Foreign Key Constraints)](/docs/constraints.md#foreignkey)
 
 - T-Sql İfadələri
   - Qeydiyyat ifadələri
