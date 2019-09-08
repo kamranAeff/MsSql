@@ -80,8 +80,36 @@ Bəzi hallarda isə boş buraxılması imkanı olmayan sütun üçün susmaya g�
 Yuxarıdakı komandadan sonra cədvəldəki məlumatları yoxlasaq görəcəyikki əməliyyat tarixi avtomatik qeyd olunub.
 
 
-<h2 id="uniquekey"></h2>
+<h2 id="uniquekey">Təkrarların məhdudlaşdırılması (Unique Key)</h2>
 
+Təkrarlanmayan dəyərləri saxlayacaq sütunlara təyin ediləsi gərək olan məhdudlaşdırıcıdır. Misal üçün yuxarıdakı nümunəyə əsasən yenidən 
+
+```
+    use [Intelect];
+    go
+    insert into [Category]([Id],[Name]) values(2,N'Məişət Əşyaları');
+    go
+```  
+məlumat əlavə etsək və id dəyərini eyni saxlasaq bu zaman anomaliya yaranacaq cədvəlimizdə.Yəni həm 'Məişət Əşyaları' həm də 'Ofis Ləvazimatları' adlı iki kateqoriyamızın hər ikisi eyni eyni koda sahib olacaqlar.Bu da yolverilməzdir.Ona gorə də əvvəcə test etdiyimiz cədvəlin icindəki məlumatları təmizləyib sonra məhdudlaşdırıcımızı əlavə edirik
+
+```
+	use [Intelect]
+	TRUNCATE TABLE [Category]; --məlumatların tamamən silinməsi
+	GO
+	ALTER TABLE [Category]
+	ADD UNIQUE([Id]);--Id sütununun unikal təyin edilməsi
+	GO
+```  
+
+indi aşağıdakı kodları icra etsək 'Ofis Ləvazimatları' adlı kateqoriya əlavə olunacaq lakin 'Məişət Əşyaları' kateqoriyasını yükləyərkən unikallığın pozulmasının şahidi olacayıq.Çünki hər ikisinin Id dəyəri 2-dir.'Məişət Əşyaları'-na aid olan Id dəyərini 2 ilə əvəz etsək normal qaydada icra olunacaq.
+
+```
+    use [Intelect];
+    go
+    insert into [Category]([Id],[Name]) values(1,N'Ofis Ləvazimatları');
+    insert into [Category]([Id],[Name]) values(1,N'Məişət Əşyaları');
+    go
+```  
 
 <h2 id="primarykey"></h2>
 
