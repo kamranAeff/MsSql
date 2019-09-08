@@ -93,12 +93,12 @@ Təkrarlanmayan dəyərləri saxlayacaq sütunlara təyin ediləsi gərək olan 
 məlumat əlavə etsək və id dəyərini eyni saxlasaq bu zaman anomaliya yaranacaq cədvəlimizdə.Yəni həm 'Məişət Əşyaları' həm də 'Ofis Ləvazimatları' adlı iki kateqoriyamızın hər ikisi eyni eyni koda sahib olacaqlar.Bu da yolverilməzdir.Ona gorə də əvvəcə test etdiyimiz cədvəlin icindəki məlumatları təmizləyib sonra məhdudlaşdırıcımızı əlavə edirik
 
 ```
-	use [Intelect]
-	TRUNCATE TABLE [Category]; --məlumatların tamamən silinməsi
-	GO
-	ALTER TABLE [Category]
-	ADD UNIQUE([Id]);--Id sütununun unikal təyin edilməsi
-	GO
+    use [Intelect]
+    TRUNCATE TABLE [Category]; --məlumatların tamamən silinməsi
+    GO
+    ALTER TABLE [Category]
+    ADD CONSTRAINT  UCategoryId UNIQUE([Id]);--Id sütununun unikal təyin edilməsi
+    GO
 ```  
 
 indi aşağıdakı kodları icra etsək 'Ofis Ləvazimatları' adlı kateqoriya əlavə olunacaq lakin 'Məişət Əşyaları' kateqoriyasını yükləyərkən unikallığın pozulmasının şahidi olacayıq.Çünki hər ikisinin Id dəyəri 1-dir.'Məişət Əşyaları'-na aid olan Id dəyərini 2 ilə əvəz etsək normal qaydada icra olunacaq.
@@ -111,7 +111,40 @@ indi aşağıdakı kodları icra etsək 'Ofis Ləvazimatları' adlı kateqoriya 
     go
 ```  
 
-<h2 id="primarykey"></h2>
+<h2 id="primarykey">Əsas açar (Primary Key)</h2>
+
+**Primary Key** - yəni əsas acar məlumatı təyin edən açardır adından da göründüyü kimi.Və bir öncəki nümunə ilə müqayisə etdikdə birbirinə çox bənzəsə də lakin Primary Key-in təyinatı tam fərqlidir.Yəni hər cədvəldə ən azından bir əsas açar olmalıdır.Əsas açar həm təkrarlanmaların qarşısını alır həm də həmin sahəyə null dəyər daxil olmasının qarşısını alır.Yəni fərqli yanaşsaq "NOT NULL" və "UNIQUE" məhdudlaşdırıcılarını eyni anda əvəz edir.Bir cədvəldə ancaq bir ədəd "Primary Key " təyin etmək olar.Əvvəl yaratdığımız "UCategoryId" **UNIQUE** məhdudlaşdırıcını silib **Primary Key** məhdudlaşdırıcısını əlavə edirik.
+
+```
+    use [Intelect];
+    go
+    -- ilk öncə unikallıq məhdudlaşdırıcısını ləğv edirik
+	ALTER TABLE [Category]
+    DROP CONSTRAINT  UCategoryId;
+    --sonra Id dəyərinin null olmasının qarşısını alırıq
+    ALTER TABLE [Category]
+    ALTER COLUMN Id int not null;
+    --sonda isə əsas açar təyin edirik Category cədvəlimiz üçün.
+    ALTER TABLE [Category]
+    ADD CONSTRAINT  PK_Category PRIMARY KEY([Id]);
+    go
+```  
+
+
+Və ya cədvəli əvvəlcədən bu kemilənləri əsas tutaraq belə yarada bilərdik.
+
+```
+    use [Intelect];
+    GO
+    CREATE TABLE Category(
+    [Id] int NOT NULL PRIMARY KEY,
+    [Name] nvarchar(150) NOT NULL,
+    [CreatedDate] date NOT NULL DEFAULT GETDATE()
+    )
+    GO
+```
+
+
 
 
 <h2 id="check"></h2>
