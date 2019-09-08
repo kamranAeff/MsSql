@@ -63,7 +63,10 @@ Yuxarıdakı ətraflı məlumatdan sonra necə yeni bir cədvəl yarada bilərik
     go
 ```
 
-Burdakı kodu oxumağa çalışsaq görəcəyikki kateqoriyaları qeyd etmək üçün <b>Category</b> adlı bir cədvəl yaradaraq kateqoriyanın <b id="modify">sıra nömrəsi (<em>Id</em>)</b> və <b>adını (<em>Name</em>)</b> qeyd etmək üçün sahələr ayırmışıq.Və informasiya sisteminin genişliyindən asılı olaraq bu sahələr arta bilər.Data strukturunun dəyişdirilib artırılması qərarını aldıqda isə biz rahat şəkildə T-SQL kodları vasitəsi bunu aşağıdakı kimi icra edə bilərsiz.
+Burdakı kodu oxumağa çalışsaq görəcəyikki kateqoriyaları qeyd etmək üçün <b>Category</b> adlı bir cədvəl yaradaraq kateqoriyanın <b>sıra nömrəsi (<em>Id</em>)</b> və <b>adını (<em>Name</em>)</b> qeyd etmək üçün sahələr ayırmışıq.
+
+<h2 id="modify">Cədvəlin strukturunun dəyişdirilməsi</h2>
+Və informasiya sisteminin genişliyindən asılı olaraq bu sahələr arta bilər.Data strukturunun dəyişdirilib artırılması qərarını aldıqda isə biz rahat şəkildə T-SQL kodları vasitəsi bunu aşağıdakı kimi icra edə bilərsiz.
 
 ```html
     use [Intelect];
