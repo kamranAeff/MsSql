@@ -1,4 +1,4 @@
-# Table əməliyyatları / Cədvəl üzrə əməliyyatlar
+# Cədvəl üzrə əməliyyatlar
 ## Cədvəl(Table) nədir? Niyə ehtiyyac duyuruq cədvəllərə?
 
 Əvvəl də qeyd etdiyimiz kimi məlumatların saxlanılmasında əsas və yeganə rolu cədvəllər(Table) oynayır.Məlumatlar cədvəllərdə sətirlər(row/record) şəklində saxlanılır.Belə ki biz Cədvəllərdə sadə və əlaqəli məlumatları saxlayırıq.
@@ -49,4 +49,16 @@ Yaxşı bəs cədvəllər üzrə əməliyyatlar deyəndə nə nəzərdə tuturuq
 
 
 ## Cədvəl yaratmaq üçün nə etməli?
-Yuxarıdakı ətraflı məlumatdan sonra necə yeni bir cədvəl yarada bilərik ondan danışaq.
+
+Yuxarıdakı ətraflı məlumatdan sonra necə yeni bir cədvəl yarada bilərik ondan danışaq.İlk öncə yadda saxlamaq lazımdır ki, <b>Sql Server Management Studio</b> vasitəsi ilə visual şəkildə edə biləcəyimiz hər şey kimi, yeni cədvəli də visual şəkildə yatarmaq olar.Həmçinin eyni işi TSQL - kodları vasitəsi ilə də bunu icra edə bilərik.Misal üçün  <u>Category</u> cədvəlini gəlin daha Öncə yatarmış olduğumuz <u>Intelect</u> verilənlər bazasında yaradaq.
+
+
+```html
+    use [Intelect];
+    go
+    CREATE TABLE Category(
+        Id int,
+        Name nvarchar(150)
+    );
+    go
+```

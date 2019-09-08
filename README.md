@@ -5,7 +5,7 @@ Verilənlər Bazası(VB) = DataBase (DB)
   - Db yaratmaq
   - Db adını dəyişmək və silmək
 
-- Table əməliyyatları
+- Cədvəl üzrə əməliyyatlar
   - [Verilənlərin tipləri - DataTypes](/docs/datatypes.md)
   - Düzgün data tipinin seçilməsi
   - [Yeni cədvəl yaratmaq](/docs/createtable.md)
