@@ -21,7 +21,7 @@ Bir öncəki dərslərdəki Category cədvəlinin koduna nəzər yetirək.
     go
 ```
 
-İndiki halda yeni məlumat əlavə etsək və <b>kateqoriya kodu</b>nu boş buraxaraq yalnız <b>ad</b> əlavə edərək məlumat yarada bilərik.
+İndiki halda yeni məlumat əlavə etsək və <b>kateqoriya ad</b>ını boş buraxaraq yalnız <b>kod</b> əlavə edərək məlumat yarada bilərik.
 
 ```html
     use [Intelect];
@@ -39,19 +39,19 @@ və nəticəyə baxsaq
     go
 ```
 
-görərikki kategoriya adı boş olaraq qeyd olunub və bu yolverilməzdir.Ona görə də bu halların baş verməsinin qarşısını almalıyıq.Bunun üçün də <b>not null</b> məhdudlaşdırıcısından istifadə edirik.Yəni aşağıdakı kodla Name sütununun box buraxıla bilinmiyəcək bir sütun oldugunu qəti olaraq təyin etmiş oluruq.
+görərikki kategoriya adı boş olaraq qeyd olunub və bu yolverilməzdir.Ona görə də bu halların baş verməsinin qarşısını almalıyıq.Bunun üçün də <b>not null</b> məhdudlaşdırıcısından istifadə edirik.Yəni aşağıdakı kodla <b>Name</b> sütununun boç buraxıla bilinmiyəcək bir sütun oldugunu qəti olaraq təyin etmiş oluruq.
 
 ```html
     use [Intelect];
     go
     ALTER TABLE [Category] 
-    ALTER COLUMN [Name] nvarchar(150) NOT NULL
+    ALTER COLUMN [Name] nvarchar(150) NOT NULL;
     go
 ```
 
 yenidən bu kodu çağırası olsaq <b>Name</b> sütununun boş buraxılma icazəsi olmadığı barədə xəta alacayıq.
 
-```html
+```
     use [Intelect];
     go
     insert into [Category]([Id]) values(1);
