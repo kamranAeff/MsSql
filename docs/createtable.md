@@ -41,8 +41,9 @@ Yaxşı bəs cədvəllər üzrə əməliyyatlar deyəndə nə nəzərdə tuturuq
 ### TCL     -   Transaction Control Language
 
 <blockquote>Bu bölməyə aid olan komandaları misal göstərə bilərik.
-- COMMIT    – Tranzaksiyanın bitməsini qeyd edir və əmaliyyatları təsdiqləyir.
-- SAVEPOINT – Tranzaksiya daxilində qayıdıla biləcək bir nöqtə təyin edir.
+
+- COMMIT    – Tranzaksiyanın bitməsini qeyd edir və əmaliyyatları təsdiqləyir.  
+- SAVEPOINT – Tranzaksiya daxilində qayıdıla biləcək bir nöqtə təyin edir.  
 - ROLLBACK  – Sonuncu **COMMİT**`ə qədər icra edilən əməliyyatları ləğv edir.
 </blockquote>
 
