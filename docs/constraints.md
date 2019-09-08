@@ -57,7 +57,7 @@ yenidən bu kodu çağırası olsaq <b>Name</b> sütununun boş buraxılma icaz�
     insert into [Category]([Id]) values(1);
     go
 ```  
-    > Cannot insert the value NULL into column 'Name', table 'Intelect.dbo.Category'; column does not allow nulls. INSERT fails.
+> Cannot insert the value NULL into column 'Name', table 'Intelect.dbo.Category'; column does not allow nulls. INSERT fails.
 
 
 <h2 id="uniquekey"></h2>
