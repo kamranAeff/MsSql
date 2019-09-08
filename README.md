@@ -8,7 +8,7 @@ Verilənlər Bazası(VB) = DataBase (DB)
 - Table əməliyyatları
   - [Verilənlərin tipləri - DataTypes](/docs/datatypes.md)
   - Düzgün data tipinin seçilməsi
-  - Yeni cədvəl yaratmaq
+  - [Yeni cədvəl yaratmaq](/docs/createtable.md)
   - Mövcud cədvələ yeni sütunun əlavə edilməsi dəyişdirilib və silinməsi
   - Məhdudlaşdırıcılar - Constraints
     - Not Null məhdudlaşdırıcısı
