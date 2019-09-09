@@ -18,11 +18,11 @@ Verilənlər Bazası(VB) = DataBase (DB)
     - [Xarici açar məhdudlaşdırıcısı (Foreign Key Constraints)](/docs/constraints.md#foreignkey)
 
 - T-Sql İfadələri
-  - Qeydiyyat ifadələri
-    - Yeni məlumat əlavə etmək
-    - Mövcud məlumat üzrə dəyişiklik etmək
-    - Mövcud məlumatı silmək
-  - Seçim ifadələri
+  - [Qeydiyyat ifadələri](/docs/dml.md)
+    - [Yeni məlumat əlavə etmək](/docs/dml.md#insert)
+    - [Mövcud məlumat üzrə dəyişiklik etmək](/docs/dml.md#update)
+    - [Mövcud məlumatı silmək](/docs/dml.md#delete)
+  - [Seçim ifadələri](/docs/dql.md)
     - Məlumatların şərtlərə görə seçilməsi
     - Təkrarsız məlumatların seçilməsi
     - Məlumatların fərqli göstəricilərinə görə sıralanması
