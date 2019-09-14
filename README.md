@@ -26,7 +26,7 @@ Verilənlər Bazası(VB) = DataBase (DB)
     - [Məlumatların şərtlərə görə seçilməsi](/docs/dql.md#search1)
     - [Təkrarsız məlumatların seçilməsi](/docs/dql.md#distinct)
     - [Məlumatların fərqli göstəricilərinə görə sıralanması](/docs/dql.md#order)
-    - Limitli seçmə ifadələri
+    - [Limitli seçmə ifadələri](/docs/dql.md#top)
     - Məlumatların səhifə şəklində seçilməsi
     - Şərti adların istifadə edilməsi
   - Qoşma operatorları

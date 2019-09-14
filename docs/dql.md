@@ -212,3 +212,7 @@ Order By operatoru ilə məlumatları kiçikdən böyüyə,böyükdən kiçiyə 
 
 yəni <strong>order by</strong> operatorundan sonra sütun adı yox random funksiyası olan <strong>newid()</strong> ilə birgə istifadə edirik.
 
+
+
+<h2 id="top">Limitli seçmə ifadələri</h2>
+
