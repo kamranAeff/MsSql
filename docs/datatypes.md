@@ -2,7 +2,7 @@
 
 Sql Serverdə Məlumatların saxlanılmasında əsas və yeganə rolu cədvəllər(Table) oynayır.Məlumatlar cədvəllərdə sətirlər(row/record) şəklində saxlanılır. Və hər məlumat hissələrə (xüsusiyyətlərə) ayrılaraq saxlanılır.Bu hissələrin də təyinatına görə yaddaşda saxlanılması zərürəti yaradılır.Bu zərurəti qarşılamaq üçün verilənlərin tipi anlayışı meydana gəlir.Verilənlərin tipləri təyinatına görə aşağıdakı növlərə bölünür:
 
-<h2 id="stringtypes">String Datatypes</h2>
+<h2 id="stringtypes">String Datatypes</h2>  
 #### Aşağıda göstərilən mətn tipləri mövcuddur
 
 <table>
@@ -63,7 +63,7 @@ Sql Serverdə Məlumatların saxlanılmasında əsas və yeganə rolu cədvəll�
 </table>
 
 
-<h2 id="numerictypes">Numeric Datatypes</h2>
+<h2 id="numerictypes">Numeric Datatypes</h2>  
 #### Aşağıda göstərilən rəqəmsal tiplər mövcuddur
 
 <table>
@@ -143,7 +143,7 @@ Sql Serverdə Məlumatların saxlanılmasında əsas və yeganə rolu cədvəll�
   </tbody>
 </table>
 
-<h2 id="dateandtimetypes">Date/Time Datatypes</h2>
+<h2 id="dateandtimetypes">Date/Time Datatypes</h2>  
 #### Aşağıda göstərilən tarix və zaman tiplər mövcuddur
 
 <table>
