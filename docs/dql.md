@@ -165,3 +165,50 @@ Nəticəyə baxsaq 7 sətir görəcəyik.Lakin 2 fərqli məlumatdan ibarətdir.
     GO
 ```
 
+
+
+<h2 id="order">Məlumatların fərqli göstəricilərinə görə sıralanması</h2>
+
+Select operatoru ilə ən çox istifadə edilən operatorlardan biuri də <strong>order by</strong>operatorudur.Bu operator vasitəsi ilə select ifadəsinin nəticəsi göstərilmədən öncə qeyd olunmuş sütun və ya sütunlara görə sıralanıb istifadəçiyə göstərilir.
+Misal üçün doğum tarixinin kiçikdən böyüyə sıralanması üzrə məlumatların göstərilməsi:
+
+```html
+    USE [Intelect]
+    GO  
+    select * from [dbo].[Students] 
+	order by [BirthDate] asc;  --asc yazılmaya da bilər,çünki susmaya görə asc qəbul edilir.
+    GO
+```
+
+Və ya tam əksinə,doğum tarixinin böyükdən kiçiyə sıralanması üzrə məlumatların göstərilməsi:
+
+```html
+    USE [Intelect]
+    GO  
+    select * from [dbo].[Students] 
+	order by [BirthDate] desc;
+    GO
+```
+
+Həmçinin bir neçə sütuna görə birdən, məlumatları sıralaya bilərik.Bunun üçün order by-dan sonra yazılan sütun adları vergüllə ayırılır.Misal üçün bütün tələbələri əvvəlcə qrupa və qrup daxilində isə çoxyaşlıdan azyaşlıya doğru düzürük
+
+```html
+    USE [Intelect]
+    GO  
+    select * from [dbo].[Students] 
+	order by [Group],[BirthDate];
+    GO
+```
+
+Order By operatoru ilə məlumatları kiçikdən böyüyə,böyükdən kiçiyə sıralaya bildik.Lakin bəzən elə hallar olurki bizə fərqli ehtimallı məlumatları əldə edək.Misal üçün test sistemi yazaçayıqsa əgər,məcburuq ki sualların ardıcıllığı random olaraq fərqli ehtimalla gəlsin.Bu zaman biz select sorğusunu aşağıdakı kimi yazmalıyıq:  
+
+```html
+    USE [Intelect]
+    GO  
+    select * from [dbo].[Students] 
+	order by newid();
+    GO
+```
+
+yəni <strong>order by</strong> operatorundan sonra sütun adı yox random funksiyası olan <strong>newid()</strong> ilə birgə istifadə edirik.
+
