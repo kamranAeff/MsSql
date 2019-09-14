@@ -116,3 +116,14 @@ Tələbələr cədvəlindən bizə <q><strong>A0001</strong>-qrupunda oxuyan bü
 
 Diqqət etsəniz görəcəksiniz ki,<strong>[Gender]=N'Kişi'</strong> şərtini əlavə etmişik və iki şərti birləşdirmək üçün <strong>and</strong> şərt birləşdiricisindən istifadə edirik.
 
+İndi isə bizə <q><strong>A0001</strong>-qrupunda oxuyan bütün kişi tələbələrin siyahısı və həmçinin <strong>A0002</strong>-qrupunda oxuyan tələbələrin siyahisi ilə birlikdə</q> lazımdır.Bu siyahını əldə etmək üçün lazımlı sorğunu tərtib edək:
+
+```html
+    USE [Intelect]
+    GO  
+    select * from [dbo].[Students] 
+    where [Group]='A0001'and [Gender]=N'Kişi'  <strong>or [Group]='A0002'</strong>;
+    GO
+```
+
+Diqqət etsəniz görəcəksiniz ki,  <strong>[Group]='A0002'</strong> şərtini əlavə etmişik və üçüncü şərti birləşdirmək üçün <strong>or</strong> şərt birləşdiricisindən istifadə edirik.
