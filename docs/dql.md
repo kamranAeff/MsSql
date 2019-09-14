@@ -175,8 +175,8 @@ Misal üçün doğum tarixinin kiçikdən böyüyə sıralanması üzrə məluma
 ```html
     USE [Intelect]
     GO  
-    select * from [dbo].[Students] 
-	order by [BirthDate] asc;  --asc yazılmaya da bilər,çünki susmaya görə asc qəbul edilir.
+    select * from [dbo].[Students]
+    order by [BirthDate] asc;  --asc yazılmaya da bilər,çünki susmaya görə asc qəbul edilir.
     GO
 ```
 
@@ -185,8 +185,8 @@ Və ya tam əksinə,doğum tarixinin böyükdən kiçiyə sıralanması üzrə m
 ```html
     USE [Intelect]
     GO  
-    select * from [dbo].[Students] 
-	order by [BirthDate] desc;
+    select * from [dbo].[Students]
+    order by [BirthDate] desc;
     GO
 ```
 
@@ -195,8 +195,8 @@ Həmçinin bir neçə sütuna görə birdən, məlumatları sıralaya bilərik.B
 ```html
     USE [Intelect]
     GO  
-    select * from [dbo].[Students] 
-	order by [Group],[BirthDate];
+    select * from [dbo].[Students]
+    order by [Group],[BirthDate];
     GO
 ```
 
@@ -205,8 +205,8 @@ Order By operatoru ilə məlumatları kiçikdən böyüyə,böyükdən kiçiyə 
 ```html
     USE [Intelect]
     GO  
-    select * from [dbo].[Students] 
-	order by newid();
+    select * from [dbo].[Students]
+    order by newid();
     GO
 ```
 
