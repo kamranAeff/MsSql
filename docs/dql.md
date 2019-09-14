@@ -8,7 +8,7 @@
 - Doğum tarixi
 - Cinsi
 - Doğum yeri
-- İxtisasi
+- İxtisası
 - Qrupu
 > və birdə hər cədvəldə olması mütləq şəkildə lazım olan <strong>sıra nömrəsi(Id)</strong>sütunundan.
 
@@ -41,8 +41,78 @@ Tələbə sistemində milyonlarda tələbə ola bilər bu o deməkdirki milyonla
 
   <dt>Group</dt>
   <dd>Son olaraq <strong>Qrupu-Group</strong> sütunu üçün hansı tip lazımdı onu seçək.Mətn tipli olduğu üçün və "A0000" kimi məlumat saxlayacaöğımızı nəzərə alaraq mətn tipli sahə ayıracağımızı bilirik və həcmi 5 simvol kimi qəbul edirik.Beləliklə sütunun tipini <strong>varchar(5)</strong> seçirik,ona görə ki, unicode simvollara ehtiyyac olmur bu sahə-Group üzrə.</dd>
-
 </dl>
 
+İndi isə aldığımız qərarlara əsasən yeni cədvəl yaradaq.
 
+```html
+    use [Intelect];
+    go
+    CREATE TABLE Students(
+        [Id] int not null identity , -- Əsas açar(Primary Key),avtomatik artan(identity) ve boş buraxlılmayan bir sütun təyin etdik
+        [Name] nvarchar(15) not null,
+    	[Surname] nvarchar(15) not null,
+    	[BirthDate] date not null,
+    	[Gender] nvarchar(5) not null,
+    	[BirthPlace] nvarchar(100) not null,
+    	[Group] varchar(5) not null
+    );
+    go
+```
+
+Və yeni yaratdığımız üçün cədvəl hazırda boşdur.İndi isə sorğulamağı öyrənməyimiz üçün ilk öncə cədvələ test məlumatlar dolduraq.
+
+```html
+    USE [Intelect]
+    GO
+
+    INSERT INTO [dbo].[Students]([Name],[Surname],[BirthDate],[Gender],[BirthPlace],[Group])
+    VALUES(N'Adil',N'Abbasov','1990-01-02',N'Kişi',N'Azərbaycan,Bakı. Nəsimi. B1.M8',N'A0001'),
+    (N'Sənan',N'İsgəndərov','1995-05-23',N'Kişi',N'Azərbaycan,Bakı. Nizami. B2.M2',N'A0001'),
+    (N'Qəmbər',N'Kazımov','1998-01-13',N'Kişi',N'Azərbaycan,Abşeron. Xırdalan. M18',N'A0001'),
+    (N'Zülfiyyə',N'Əliyeva','1995-01-02',N'Qadın',N'Azərbaycan,Bakı. Nəsimi. B1.M8',N'A0001'),
+    (N'Zeynəb',N'Zamanlı','1993-11-02',N'Qadın',N'Azərbaycan,Gəncə. Kəpəz. B1.M8',N'A0002'),
+    (N'Əli',N'Cavadov','1990-10-02',N'Kişi',N'Azərbaycan,Şəki. E218',N'A0002'),
+    (N'Qalib',N'Kərimli','1990-09-06',N'Kişi',N'Azərbaycan,Sumqayıt. E120',N'A0002');
+    GO
+```
+
+Beləliklə artıq cədvəlimizdə 7 tələbə var.Baxmaq üçün
+
+```html
+    USE [Intelect]
+    GO
+
+    select * from [dbo].[Students];
+    GO
+```
+
+Komandasını icra edə bilərsiz.
+
+
+<h2 id="search1">Məlumatların şərtlərə görə seçilməsi</h2>
+Real həyatda bəzən milyonlarca məlumatla qarşılaşırıq və bu məlumatların icindən sadecə xüsusi şərtləri ödəyən məlumatları əldə etmə zərurəti ilə qarş-qarşıya qalırıq.Və bu zaman artıq biz xüsusi şərtlər tətbiq edərək məlumat seçməyə başlayırıq.
+
+Bunun üçün ilk öncə <strong>where</strong>-açar sözüçü istifadə edirik.Yəni bu açar söz vasitəsi ilə artıq bu məlumat toplusunu xüsusi şərtə tabe tutaraq sorğulayırıq.
+Deyək ki, <strong>A0001</strong> grupunda oxuyan tələbələrin siyahısına baxmaq istəyirik.Bu zaman sadə select sorğumuza aşağıdakı kimi şərt əlavə edirik.
+
+```html
+    USE [Intelect]
+    GO
+    select * from [dbo].[Students] where [Group]='A0001';
+    GO
+```
+
+Beləliklə artıq ümumilikdə 7 məlumat olan cədvəldən xüsusi şərtə uyğun 4 məlumatı tapdıq.İndi isə şərti biraz da artıraraq nəticəni biraz da azaldaq.Misal üçün deyək ki,
+Tələbələr cədvəlindən bizə <q><strong>A0001</strong>-qrupunda oxuyan bütün kişi tələbələrin siyahısı</q> lazımdır.Bu siyahını əldə etmək üçün lazımlı sorğunu tərtib edək:
+
+```html
+    USE [Intelect]
+    GO  
+    select * from [dbo].[Students] 
+    where [Group]='A0001' <strong>and [Gender]=N'Kişi'</strong>;
+    GO
+```
+
+Diqqət etsəniz görəcəksiniz ki,<strong>[Gender]=N'Kişi'</strong> şərtini əlavə etmişik və iki şərti birləşdirmək üçün <strong>and</strong> şərt birləşdiricisindən istifadə edirik.
 
