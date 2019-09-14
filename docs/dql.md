@@ -110,7 +110,7 @@ Tələbələr cədvəlindən bizə <q><strong>A0001</strong>-qrupunda oxuyan bü
     USE [Intelect]
     GO  
     select * from [dbo].[Students] 
-    where [Group]='A0001' <strong>and [Gender]=N'Kişi'</strong>;
+    where [Group]='A0001' and [Gender]=N'Kişi';
     GO
 ```
 
@@ -122,7 +122,7 @@ Diqqət etsəniz görəcəksiniz ki,<strong>[Gender]=N'Kişi'</strong> şərtini
     USE [Intelect]
     GO  
     select * from [dbo].[Students] 
-    where [Group]='A0001'and [Gender]=N'Kişi'  <strong>or [Group]='A0002'</strong>;
+    where [Group]='A0001'and [Gender]=N'Kişi' or [Group]='A0002';
     GO
 ```
 
