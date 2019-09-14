@@ -10,14 +10,14 @@
 - Doğum yeri
 - İxtisasi
 - Qrupu
-> və birdə hər cədvəldə olması mütləq şəkildə lazım olan **sıra nömrəsi(Id)** sütunundan.
+> və birdə hər cədvəldə olması mütləq şəkildə lazım olan <strong>sıra nömrəsi(Id)</strong>sütunundan.
 
 İndi isə gəlin uyğun tiplərin seçilməsi üçün qərar qəbul edək.
 
 <dl>
   <dt>Id</dt>
   <dd>İlk öncə <strong>sıra nömrəsi-Id</strong> sütunu üçün hansı tip lazımdı onu seçək.İlk öncə bilirikki sıra nömrəsi rəqəm tipli məlumatdır.Ona görə də <a href="datatypes.md#numerictypes">rəqəm tipləri</a> arasından uyğununu seçirik.Uyğun tipi seçmək üçün ilk öncə saxlayacağımız məlumat tipini təyin edirik.Sonra isə məlumatın həcmini.
-Tələbə sistemində milyonlarda tələbə ola bilər bu o deməkdirki milyonları aşacaq bizim **Id** sütununda saxlayacağımız məlumat.Bu zaman  <a href="datatypes.md">Verilənlərin tipləri</a> bölümünü birdə gözdən keçirməyimiz məsləhətdir.Seçimimizi sonradan dəyişə bilərik ama əvvəlcədən mümkün ehtimalları nəzərə almağımız məsləhətdir.Beləliklə bu qərara gəlirikki bizim <strong>sıra nömrəsi-Id</strong> sütununun tipinin <strong>int</strong> olması daha məsləhətlidir.</dd>
+Tələbə sistemində milyonlarda tələbə ola bilər bu o deməkdirki milyonları aşacaq bizim <strong>Id</strong> sütununda saxlayacağımız məlumat.Bu zaman  <a href="datatypes.md">Verilənlərin tipləri</a> bölümünü birdə gözdən keçirməyimiz məsləhətdir.Seçimimizi sonradan dəyişə bilərik ama əvvəlcədən mümkün ehtimalları nəzərə almağımız məsləhətdir.Beləliklə bu qərara gəlirikki bizim <strong>sıra nömrəsi-Id</strong> sütununun tipinin <strong>int</strong> olması daha məsləhətlidir.</dd>
   
   <dt>Name</dt>
   <dd>Bu dəfə isə <strong>Tələbənin adı-Name</strong> sütunu üçün hansı tip lazımdı onu seçək.İlk öncə bilirikki tələbənin adı mətn tipli məlumatdır.Ona görə də <a href="datatypes.md#stringtypes">mətn tipləri</a> arasından uyğununu seçirik.Uyğun tipi seçmək üçün ilk öncə saxlayacağımız məlumat tipini təyin edirik.Sonra isə məlumatın həcmini.Tələbənin adı mətn tiplidir və real həyatda insan adları 10-15 simvolu keçməyən hərf yığımından ibarətdir.Eyni zamanda adlar Ə,Ş kimi unicode simvolları da özündə saxlaya bilər.Bu zaman <a href="datatypes.md">Verilənlərin tipləri</a> bölümünü birdə gözdən keçirməyimiz məsləhətdir.Beləliklə bu qərara gəlirikki bizim <strong>Tələbənin adı-Name</strong> sütununun tipinin <strong>nvarchar(15)</strong> olması daha məsləhətlidir.</dd> 
