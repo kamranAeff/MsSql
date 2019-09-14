@@ -127,3 +127,41 @@ Diqqət etsəniz görəcəksiniz ki,<strong>[Gender]=N'Kişi'</strong> şərtini
 ```
 
 Diqqət etsəniz görəcəksiniz ki,  <strong>[Group]='A0002'</strong> şərtini əlavə etmişik və üçüncü şərti birləşdirmək üçün <strong>or</strong> şərt birləşdiricisindən istifadə edirik.
+
+Bəzən isə biz məlumatın hamisini yox, bir hissəsini xatırlaya bilirik və məlumatın xatırladığımız hissəsinə görə axtarış etmək məcburiyyətində qalırıq.Deyəkki doğum yeri nizami rayonu olan bütün tələbələri axtarmağımız lazım gəlir, yəni <q>DoğumYeri xanasında Nizami rayonu qeyd olunan tələbələri axtarırıq</q>.Bu zaman sorğunu aşağıdakı kimi tərtib edirik.
+
+```html
+    USE [Intelect]
+    GO  
+    select * from [dbo].[Students] 
+	where [BirthPlace] like N'%nəsimi%';
+    GO
+```
+
+
+
+
+
+<h2 id="distinct">Təkrarsız məlumatların seçilməsi</h2>
+
+Deyəkki belə bir sualla qarşılaşdıq.
+Hansı fərqli qrup adı qeyd olunmuşdur tələbə cədvəlində?
+
+İlk öncə yalnız Group sütununu görmək üçün sorğumuzu yeniləyək.
+
+```html
+    USE [Intelect]
+    GO  
+    select [Group] from [dbo].[Students];
+    GO
+```
+
+Nəticəyə baxsaq 7 sətir görəcəyik.Lakin 2 fərqli məlumatdan ibarətdir.Belə hallarda məlumatların təkrarlanmasının qarşısını almaq lazımdır.Bunun üçün <strong>distinct</strong>  açar sözündən istifadə edirik.Aşağıdakı sorğu kodunu icra edərək problemimizin aradan qalxdığını görəcəyik.
+
+```html
+    USE [Intelect]
+    GO  
+    select distinct [Group] from [dbo].[Students];
+    GO
+```
+

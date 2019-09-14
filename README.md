@@ -24,7 +24,7 @@ Verilənlər Bazası(VB) = DataBase (DB)
     - [Mövcud məlumatı silmək](/docs/dml.md#delete)
   - [Seçim ifadələri](/docs/dql.md)
     - [Məlumatların şərtlərə görə seçilməsi](/docs/dql.md#search1)
-    - Təkrarsız məlumatların seçilməsi
+    - [Təkrarsız məlumatların seçilməsi](/docs/dql.md#distinct)
     - Məlumatların fərqli göstəricilərinə görə sıralanması
     - Limitli seçmə ifadələri
     - Məlumatların səhifə şəklində seçilməsi
