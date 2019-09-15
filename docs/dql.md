@@ -272,9 +272,66 @@ Bəzən isə biz konkret say vermədən məlumatın müəyyən hissəsini (%-ini
         <strong>5.</strong> Qruplar üzrə 6 gənc tələbəni ən gəncdən ən yaşlıya doğru sıralayın.
     </dd>
 </dl>
+
+
 <br/><br/><br/><br/><br/><br/><br/>
+<h2 id="alias">Şərti adların istifadə edilməsi</h2>
+Biz bəzən sorğu yazanda adların uzun olduğu hallarda yazacağımız xeyli vaxt ala bilir,bəzən də daha anlaşıqlı adların təyin edilməsi üçün biz şərti adlardan istifadə edirik.Şərti adları biz iki sahə(obyekt) üzrə təyin edilir,cədvəl(view,function) və sütunlar(columns) üzrə təyin edilir.
+
+> Sütunlar üzrə şərti adların verilməsi:
+
+```html
+    USE [Intelect]
+    GO  
+    select 
+     [Id] 'Kod'
+    ,[Name] 'Tələbə adı'
+    ,[Surname] [Tələbənin soyadı]
+    ,[BirthDate] [Tələbənin doğum tarixi]
+    ,[Gender][Tələbənin cinsi]
+    ,[BirthPlace] 'Tələbənin doğum yeri'
+    ,[Group] 'Tələbənin qrupu'
+	from [dbo].[Students];
+    GO
+```
+
+Səhv anlaşılmaması üçün qeyd etmək istəyirəm ki,şərti adlar(aliases) təkcə sütun adlarını azərbaycan dilində yazmaq üçün deyil.Bəzən <strong>ad və soyad</strong> məlumatlarını bir sütunda göstərmək istəyirik.Bu zaman sorğunu aşağıdakı kimi yazmalıyıq:
+
+```html
+    USE [Intelect]
+    GO  
+    select 
+	   [Id]
+      ,[Name] +' ' + [Surname]   -- << bu hissəyə fikir verin (No column name)  kimi qeyd olunacaq sorğunun nəticəsində
+      ,[BirthDate]
+      ,[Gender]
+      ,[BirthPlace]
+      ,[Group]
+	from [dbo].[Students];
+    GO
+```
+
+bu kimi problemin həlli üçün də şərti adlar köməyimizə çatır:
+
+```html
+    USE [Intelect]
+    GO  
+    select 
+	   [Id]
+      ,[Name] +' ' + [Surname]   FullName
+      ,[BirthDate]
+      ,[Gender]
+      ,[BirthPlace]
+      ,[Group]
+	from [dbo].[Students];
+    GO
+```
+
+beləliklə ad ilə soyadı birləşdirib <strong>FullName</strong>  şərti adı  ilə göstəririk.
+
+
+> Cədvəllərə(table) şərti adların verilməsi:
 
 
 
-<h2 id="top">Şərti adların istifadə edilməsi</h2>
 
