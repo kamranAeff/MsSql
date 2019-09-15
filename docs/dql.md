@@ -138,7 +138,7 @@ Bəzən isə biz məlumatın hamisini yox, bir hissəsini xatırlaya bilirik və
     GO
 ```
 
-Yəni mətn tipli məlumatları sorğulayarkən bərabərdir(=) işarətindən savayı like operatorundan da istifadə edilir ki,bu operator vasitəsi ilə,axtardığımız sözlə başlayan,axtardığımız sözlə bitən və yaxut da içində axtardığımız söz olan məlumatların tapılması üçün istifadə edirik.
+Yəni mətn tipli məlumatları sorğulayarkən <strong>bərabərdir(=)</strong> işarətindən savayı <strong>like</strong> operatorundan da istifadə edilir ki,bu operator vasitəsi ilə,axtardığımız sözlə başlayan,axtardığımız sözlə bitən və yaxut da içində axtardığımız söz olan məlumatların tapılması üçün istifadə edirik.
 
 Deyəkki "Surname-Soyad" sütunu üzrə axtarış edərkən
 1. "Ab" - ilə başlayan soyada malik(Abdullayev,Abbasov,və s.) tələbələri seçmək istəyirik,bu zaman şərti aşağıdakı kimi yazmalıyıq:
@@ -225,4 +225,36 @@ yəni <strong>order by</strong> operatorundan sonra sütun adı yox random funks
 
 
 <h2 id="top">Limitli seçmə ifadələri</h2>
+Xüsusən çox qeydin olduğu cədvəlləri sorğulayarkən sorğu müddəti çox vaxt ala bilir bəzən.Misal üçün bir bankın 10 milyon müştərisi olduğunu fikirləşin.Amma bizə bu müştərilərin 100 dənəsi lazımdır edəcəyimiz əməliyyat üçün.
+Və ya yazdığımız sorğunun doğru tətbiq olunmasını yoxlayarkən  neticənin 20-30 dənəsinə nəzər yetirmək istəyərkən biz <strong>limitli seçmə ifadələri</strong>ni istifadə edirik.Bu əməliyyatı icra etmək üçün biz <strong>top([say])</strong> operatorundan istifadə edirik.Top operatorunu <strong>select</strong> operatorundan dərhal sonra yazırıq.
+
+Test bazamızda yer alan 7 tələbənin ilk 3üç-ünü görmək istəyiriksə bu zaman,sorğunu aşağıdakı kimi yazmalıyıq.
+
+```html
+    USE [Intelect]
+    GO  
+    select top(3) * from [dbo].[Students];
+    GO
+```
+
+Son üç tələbəni görmək istəyiriksə o zaman aşağıdakı kimi redaktə etməliyik sorğumuzu:
+
+```html
+    USE [Intelect]
+    GO  
+    select top(3) * from [dbo].[Students]
+    order by id desc;
+    GO
+```
+
+<dl>
+<dt>Tapşırıq</dt>
+<dd>
+ <strong>1.</strong> Ən cavan 5 tələbəni sıra ilə göstərmək.  
+ <strong>2.</strong> Ən yaşlı 4 tələbəni sıra ilə göstərmək.  
+ <strong>3.</strong> Ən gənc 3 xanım tələbənin siyahısını tərtib etmək.  
+ <strong>4.</strong> Ən gənc 4 xanım tələbənin siyahısını tərtib etmək.  
+ <strong>5.</strong> Ən yaşlı 5 kişi tələbəni gəncdən yaşlıya doğru sıra ilə siyahı şəklində tərtib etmək.  
+</dd>
+</dl>
 
