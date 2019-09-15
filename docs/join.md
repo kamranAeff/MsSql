@@ -198,7 +198,7 @@ Bu tipli məsələlərin həlli üçün ən çox istifadə olunan 4 birləşdirm
 <br/><br/><br/>
 <h2 id="innerjoin">Inner join</h2>
 <strong>Inner Join</strong> - operatoru özündən sağdakı və soldakı cədvəli uyğun sütunlara görə birləşdirərək tam uyğun gələn məlumatlara görə birləşməni icra edir.
-İndi biz Products və Category cədvəlini birləşdirək və Məhsulun kategoriyasını təsvir edək.
+İndi biz <strong>Products(<em>CategoryId</em>)</strong> və <strong>Category(<em>Id</em>)</strong> cədvəlini birləşdirək və Məhsulun kategoriyasını təsvir edək.
 
  ```html
     USE [Intelect]
