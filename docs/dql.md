@@ -382,7 +382,7 @@ Praktiki olaraq səhifələməni tərtib etmək üçün aşağıdakı şablondan
       ,[BirthPlace]
       ,[Group]
     from [dbo].[Students]
-    ORDER BY t.[Id]
+    ORDER BY [Id]
     OFFSET <ötürülməli_olan_sətir_sayı> ROWS  -- qeyd: ötürülməli_olan_sətir_sayı=səhifə_həcmi*(səhifə_nomresi-1)
     FETCH NEXT <səhifə_həcmi> ROWS ONLY;
     GO
@@ -404,7 +404,7 @@ Praktiki olaraq səhifələməni tərtib etmək üçün aşağıdakı şablondan
       ,[BirthPlace]
       ,[Group]
     from [dbo].[Students]
-    ORDER BY t.[Id]
+    ORDER BY [Id]
     OFFSET 4*(1-1) ROWS  -- qeyd: ötürülməli_olan_sətir_sayı=səhifə_həcmi*(səhifə_nomresi-1) = 4*(1-1)
     FETCH NEXT 4 ROWS ONLY;
     GO
@@ -423,7 +423,7 @@ Praktiki olaraq səhifələməni tərtib etmək üçün aşağıdakı şablondan
       ,[BirthPlace]
       ,[Group]
     from [dbo].[Students]
-    ORDER BY t.[Id]
+    ORDER BY [Id]
     OFFSET 4*(2-1) ROWS  -- qeyd: ötürülməli_olan_sətir_sayı=səhifə_həcmi*(səhifə_nomresi-1) = 4*(2-1)
     FETCH NEXT 4 ROWS ONLY;
     GO
