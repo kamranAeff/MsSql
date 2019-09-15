@@ -300,8 +300,8 @@ Səhv anlaşılmaması üçün qeyd etmək istəyirəm ki,şərti adlar(aliases)
 ```html
     USE [Intelect]
     GO  
-    select 
-	   [Id]
+    select
+       [Id]
       ,[Name] +' ' + [Surname]   -- << bu hissəyə fikir verin (No column name)  kimi qeyd olunacaq sorğunun nəticəsində
       ,[BirthDate]
       ,[Gender]
@@ -316,8 +316,8 @@ bu kimi problemin həlli üçün də şərti adlar köməyimizə çatır:
 ```html
     USE [Intelect]
     GO  
-    select 
-	   [Id]
+    select
+       [Id]
       ,[Name] +' ' + [Surname]   FullName
       ,[BirthDate]
       ,[Gender]
@@ -329,7 +329,7 @@ bu kimi problemin həlli üçün də şərti adlar köməyimizə çatır:
 
 beləliklə ad ilə soyadı birləşdirib <strong>FullName</strong>  şərti adı  ilə göstəririk.
 
-
+<br/><br/><br/>
 > Cədvəllərə(table) şərti adların verilməsi:
 
 
