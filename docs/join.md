@@ -94,7 +94,7 @@ Tərcümələri doldurmağı sizə həvalə edirəm,problemi başa düşməyiniz
     USE [Intelect]
     GO  
     drop table dbo.Products    --mövcud cədvəli silirik
-	GO  
+    GO  
     create table dbo.Products( --cədvəli yenidən normallaşdırılmış halda yaradırıq
 	Id		int identity primary key, --acar sahesi
 	[Name]	nvarchar(150) not null,
@@ -103,7 +103,7 @@ Tərcümələri doldurmağı sizə həvalə edirəm,problemi başa düşməyiniz
 	[CreatedDate] [date] NOT NULL default getdate() --sisteme dusme tarixi
 	)
     GO
-	INSERT [dbo].[Products] ([Name], [Description], [CategoryId], [CreatedDate]) 
+    INSERT [dbo].[Products] ([Name], [Description], [CategoryId], [CreatedDate]) 
     VALUES (N'Wonlex GW100 Pink', NULL, 4, '2019-09-15')
     ,(N'Wonlex Q50 Charisma BLACK', NULL, 4, '2019-09-15')
     ,(N'Samsung Galaxy S10 Dual (SM-G973) White', NULL, 4, '2019-09-15')
