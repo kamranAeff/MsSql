@@ -376,12 +376,12 @@ Praktiki olaraq səhifələməni tərtib etmək üçün aşağıdakı şablondan
     GO  
     select
        [Id]
-      ,[Name] +' ' + t.[Surname]   FullName
+      ,[Name] +' ' + [Surname]   FullName
       ,[BirthDate]
       ,[Gender]
       ,[BirthPlace]
       ,[Group]
-    from [dbo].[Students] t
+    from [dbo].[Students]
     ORDER BY t.[Id]
     OFFSET <ötürülməli_olan_sətir_sayı> ROWS  -- qeyd: ötürülməli_olan_sətir_sayı=səhifə_həcmi*(səhifə_nomresi-1)
     FETCH NEXT <səhifə_həcmi> ROWS ONLY;
@@ -398,12 +398,12 @@ Praktiki olaraq səhifələməni tərtib etmək üçün aşağıdakı şablondan
     GO  
     select
        [Id]
-      ,[Name] +' ' + t.[Surname]   FullName
+      ,[Name] +' ' + [Surname]   FullName
       ,[BirthDate]
       ,[Gender]
       ,[BirthPlace]
       ,[Group]
-    from [dbo].[Students] t
+    from [dbo].[Students]
     ORDER BY t.[Id]
     OFFSET 4*(1-1) ROWS  -- qeyd: ötürülməli_olan_sətir_sayı=səhifə_həcmi*(səhifə_nomresi-1) = 4*(1-1)
     FETCH NEXT 4 ROWS ONLY;
@@ -417,12 +417,12 @@ Praktiki olaraq səhifələməni tərtib etmək üçün aşağıdakı şablondan
     GO  
     select
        [Id]
-      ,[Name] +' ' + t.[Surname]   FullName
+      ,[Name] +' ' + [Surname]   FullName
       ,[BirthDate]
       ,[Gender]
       ,[BirthPlace]
       ,[Group]
-    from [dbo].[Students] t
+    from [dbo].[Students]
     ORDER BY t.[Id]
     OFFSET 4*(2-1) ROWS  -- qeyd: ötürülməli_olan_sətir_sayı=səhifə_həcmi*(səhifə_nomresi-1) = 4*(2-1)
     FETCH NEXT 4 ROWS ONLY;
