@@ -198,7 +198,7 @@ Bu tipli məsələlərin həlli üçün ən çox istifadə olunan 4 birləşdirm
 <br/><br/><br/>
 <h2 id="innerjoin">Inner join</h2>
 <strong>Inner Join</strong> - operatoru özündən sağdakı və soldakı cədvəli uyğun sütunlara görə birləşdirərək tam uyğun gələn məlumatlara görə birləşməni icra edir.
-İndi biz <strong>Products(<em>CategoryId</em>)</strong> və <strong>Category(<em>Id</em>)</strong> cədvəlini birləşdirək və Məhsulun kategoriyasını təsvir edək.
+İndi biz <strong>Products(<em>CategoryId</em>)</strong> və <strong>Category(<em>Id</em>)</strong> cədvəlini birləşdirək və məhsullar üzrə məlumatı tam təsvir edək.
 
  ```html
     USE [Intelect]
@@ -250,6 +250,8 @@ Bu tipli məsələlərin həlli üçün ən çox istifadə olunan 4 birləşdirm
 <tr><td>22</td><td>JBL Pulse 3 Black</td><td></td><td>1</td><th>Audio,video</th><td>2019-09-15</td></tr>
 </tbody>
 </table>
+
+Gördüyümüz kimi,<strong>Inner Join</strong> - iki cədvəli birləşdirərək tam nəticə almağımıza təminat verdi.
 
 <br/><br/><br/>
 <h2 id="leftjoin">Left join</h2>
