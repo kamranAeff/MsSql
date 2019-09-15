@@ -30,10 +30,10 @@ Verilənlər Bazası(VB) = DataBase (DB)
     - [Şərti adların istifadə edilməsi](/docs/dql.md#alias)
     - [Məlumatların səhifə şəklində seçilməsi](/docs/dql.md#paging)
   - [Qoşma operatorları](/docs/join.md)
-    - Inner join
-    - Left join
-    - Right join
-    - Full join
+    - [Inner join](/docs/join.md#innerjoin)
+    - [Left join](/docs/join.md#leftjoin)
+    - [Right join](/docs/join.md#rightjoin)
+    - [Full join](/docs/join.md#fulljoin)
 
 - Sql Operatorları
   - IN
