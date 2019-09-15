@@ -1,6 +1,6 @@
 # Qoşma operatorları
 
-İndiyə qədər istifadə edəcəyimiz cədvələ baxarsaq "Qrup Adı" sütununda təkrarlanmalar olduğunu görürük.Təsəvvür edin ki qrupun adı dəyişilir bu zaman 4 sətirdə dəyikiklik etmək nə dərəcədə doğrudur?Düşündükcə həqiqətən də görürükki bu halda biz vaxt itirə bilərik,bundan savayı səhv etmə ehtimalımız yüksək olacaqdır.
+İndiyə qədər istifadə etdiyimiz cədvələ baxarsaq "Qrup Adı" sütununda təkrarlanmalar olduğunu görürük.Təsəvvür edin ki qrupun adı dəyişilir bu zaman 4 sətirdə dəyikiklik etmək nə dərəcədə doğrudur?Düşündükcə həqiqətən də görürükki bu halda biz vaxt itirə bilərik,bundan savayı səhv etmə ehtimalımız yüksək olacaqdır.
 
 Yaxudda bu tipli bir Məhsul cədvəlimiz var düşünün.Məhsul cədvəlində məhsul haqqında məlumatlar və birdə məhsul kateqoriyası olduğunu düşünün.Məhsulların hər biri üçün həmçinin kateqoriyalarının ingilis dilində tərcüməsi də tələb olunur.Bu zaman bizim 200-dən ibarət 5 çeşid(5 fərqli kategoriyaya aid) məhsulumuz var.Bu zaman hər kategoriyaya aid eyni sayda məhsul olduğunu düşünsək onda hər kateqoriyada 40 məhsul var.Bu o deməkdirki 1 kategoriyani ingilis dilinə çevirərkən eyni tərcüməni 40-sətrə yazmalıyam.Həlli nərdir bəs? Həlli Verilənlər bazasının normallaşdırılmasıdır.Nəzəri olaraq dediklərimizi praktiki olaraq icra edək.Məhsul cədvəlimizi yaradaq:
 
@@ -211,7 +211,7 @@ Bu tipli məsələlərin həlli üçün ən çox istifadə olunan 4 birləşdirm
 	,c.Name [CategoryName]
 	,p.CreatedDate 
     from [dbo].[Products] p
-	join [dbo].[Category] c on p.CategoryId=c.Id;
+	inner join [dbo].[Category] c on p.CategoryId=c.Id;
     GO
 ```
 
@@ -255,7 +255,286 @@ Gördüyümüz kimi,<strong>Inner Join</strong> - iki cədvəli birləşdirərə
 
 <br/><br/><br/>
 <h2 id="leftjoin">Left join</h2>
-<strong>like</strong>
+<strong>Left Join</strong> - operatoru özündən sağdakı və soldakı cədvəli uyğun sütunlara görə <strong>sol tərəfdəki cədvəli əsas tutaraq</strong> birləşdirir, sol tərəfdəki bütün məlumatları götürüb sağ tərəfdəki məlumatlardan uyğun gələnlə birləşdirib,uyğun gəlməyənləri boş buraxır.
+İndiki halda yuxarıdakı sorğudakı <strong>Inner Join</strong>-i,<strong>Left Join</strong>-lə əvəz etsək heç bir dayişiklik olmayacaq.Fərqi görmək üçün bəzi sehirli toxunuşlara ehtiyyacımız var.
+
+[CategoryId] sütununun həmcinin boş buraxıla bilməsi üçün aşaıdakı komanda ilə cədvəlin sxemasını dəyişirik.
+
+ ```html
+    USE [Intelect]
+    GO  
+    ALTER TABLE [dbo].[Products]
+    ALTER COLUMN CategoryId int NULL;
+    GO
+```
+sonra isə yeni məhsul əlavə edirik amma <strong>CategoryId</strong> sütununu boş buraxacayıq.
+
+ ```html
+    USE [Intelect]
+    GO  
+    INSERT [dbo].[Products] ([Name], [CategoryId], [CreatedDate]) 
+    VALUES (N'Fotoaparat Canon EOS M100 15-45mm IS STM Kit Black', NULL, '2019-09-15');
+    GO
+```
+
+sonra isə yuxarıdakı <strong>inner join</strong> ilə yazdığımız sorğunu <strong>left join</strong>-lə əvəzləyib nəticəyə baxaq.
+
+ ```html
+    USE [Intelect]
+    GO  
+    SELECT
+    p.*,
+    c.*
+    from [dbo].[Products] p
+    left join [dbo].[Category] c on p.CategoryId=c.Id;
+    GO
+```
+<table>
+<thead>
+<tr>	
+<th>Id</th>
+<th>Name</th>
+<th>Description</th>
+<th>CategoryId</th>
+<th>CreatedDate</th>
+<th>Id</th>
+<th>Name</th>
+<th>CreatedDate</th>
+</tr>
+</thead>
+<tbody><tr>	
+<td>1</td>
+<td>Wonlex GW100 Pink</td>
+<td><em>NULL</em></td>
+<th>4</th>
+<td>2019-09-15</td>
+<td>4</td>
+<td>Telefonlar, Saatlar və Nömrələr</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>2</td>
+<td>Wonlex Q50 Charisma BLACK</td>
+<td><em>NULL</em></td>
+<th>4</th>
+<td>2019-09-15</td>
+<td>4</td>
+<td>Telefonlar, Saatlar və Nömrələr</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>3</td>
+<td>Samsung Galaxy S10 Dual (SM-G973) White</td>
+<td><em>NULL</em></td>
+<th>4</th>
+<td>2019-09-15</td>
+<td>4</td>
+<td>Telefonlar, Saatlar və Nömrələr</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>4</td>
+<td>Xiaomi Mi A3 4/128GB White</td>
+<td><em>NULL</em></td>
+<th>4</th>
+<td>2019-09-15</td>
+<td>4</td>
+<td>Telefonlar, Saatlar və Nömrələr</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>5</td>
+<td>Blackview BV1000 yellow</td>
+<td><em>NULL</em></td>
+<th>4</th>
+<td>2019-09-15</td>
+<td>4</td>
+<td>Telefonlar, Saatlar və Nömrələr</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>6</td>
+<td>Huawei Y9 2019 4/64GB Red</td>
+<td><em>NULL</em></td>
+<th>4</th>
+<td>2019-09-15</td>
+<td>4</td>
+<td>Telefonlar, Saatlar və Nömrələr</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>7</td>
+<td>FLY TS114 BLACK</td>
+<td><em>NULL</em></td>
+<th>4</th>
+<td>2019-09-15</td>
+<td>4</td>
+<td>Telefonlar, Saatlar və Nömrələr</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>8</td>
+<td>Blackview BV5500 Pro yellow</td>
+<td><em>NULL</em></td>
+<th>4</th>
+<td>2019-09-15</td>
+<td>4</td>
+<td>Telefonlar, Saatlar və Nömrələr</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>9</td>
+<td>Lenovo TB 7104I/3G -Wi-Fi/7 BLACK</td>
+<td><em>NULL</em></td>
+<th>3</th>
+<td>2019-09-15</td>
+<td>3</td>
+<td>Planşetlər</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>10</td>
+<td>Samsung Galaxy Tab A 8.0 (SM-T295) Black</td>
+<td><em>NULL</em></td>
+<th>3</th>
+<td>2019-09-15</td>
+<td>3</td>
+<td>Planşetlər</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>11</td>
+<td>Lenovo TAB E10 TB-X104F/10.1 BLACK</td>
+<td><em>NULL</em></td>
+<th>3</th>
+<td>2019-09-15</td>
+<td>3</td>
+<td>Planşetlər</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>12</td>
+<td>Lenovo TAB 4 10 LTE (TB-X304L) black</td>
+<td><em>NULL</em></td>
+<th>3</th>
+<td>2019-09-15</td>
+<td>3</td>
+<td>Planşetlər</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>13</td>
+<td>Samsung Galaxy Tab A (SM-T385) GOLD</td>
+<td><em>NULL</em></td>
+<th>3</th>
+<td>2019-09-15</td>
+<td>3</td>
+<td>Planşetlər</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>14</td>
+<td>Huawei M5 Lite 3+32 Space Grey</td>
+<td><em>NULL</em></td>
+<th>3</th>
+<td>2019-09-15</td>
+<td>3</td>
+<td>Planşetlər</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>15</td>
+<td>Apple MacBook Air 13″ MVFK2</td>
+<td><em>NULL</em></td>
+<th>2</th>
+<td>2019-09-15</td>
+<td>2</td>
+<td>Kompüter və ofis avadanlığı</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>16</td>
+<td>Apple MacBook Air 13″ MVFH2</td>
+<td><em>NULL</em></td>
+<th>2</th>
+<td>2019-09-15</td>
+<td>2</td>
+<td>Kompüter və ofis avadanlığı</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>17</td>
+<td>Monoblok HP ENVY 27-B170ur i7/16/nv4/1tb128/win10</td>
+<td><em>NULL</em></td>
+<th>2</th>
+<td>2019-09-15</td>
+<td>2</td>
+<td>Kompüter və ofis avadanlığı</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>18</td>
+<td>Noutbuk Asus Tuf Gaming FX505DD BQ121 </td>
+<td><em>NULL</em></td>
+<th>2</th>
+<td>2019-09-15</td>
+<td>2</td>
+<td>Kompüter və ofis avadanlığı</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>19</td>
+<td>Noutbuk Acer Predator Helios 300 PH315-52-718G </td>
+<td><em>NULL</em></td>
+<th>2</th>
+<td>2019-09-15</td>
+<td>2</td>
+<td>Kompüter və ofis avadanlığı</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>20</td>
+<td>Musiqi merkezi SONY MHC-V82D</td>
+<td><em>NULL</em></td>
+<th>1</th>
+<td>2019-09-15</td>
+<td>1</td>
+<td>Audio,video</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>21</td>
+<td>Speaker Sony SRS-XB21 Wireless</td>
+<td><em>NULL</em></td>
+<th>1</th>
+<td>2019-09-15</td>
+<td>1</td>
+<td>Audio,video</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>22</td>
+<td>JBL Pulse 3 Black</td>
+<td><em>NULL</em></td>
+<th>1</th>
+<td>2019-09-15</td>
+<td>1</td>
+<td>Audio,video</td>
+<td>2019-09-15</td>
+</tr>
+<tr>	
+<td>23</td>
+<td>Fotoaparat Canon EOS M100 15-45mm IS STM Kit Black</td>
+<td><em>NULL</em></td>
+<th><em>NULL</em></th>
+<td>2019-09-15</td>
+<td><em>NULL</em></td>
+<td><em>NULL</em></td>
+<td><em>NULL</em></td>
+</tr>
+</tbody>
+</table>
+
 <br/><br/><br/>
 <h2 id="rightjoin">Right join</h2>
 <strong>like</strong>
