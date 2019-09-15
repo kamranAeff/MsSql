@@ -799,11 +799,11 @@ Sonra isə right joinlə eyni sorğunu təkrar işlədirik:
 <td><em>NULL</em></td>
 <td><em>NULL</em></td>
 <td><em>NULL</em></td>
-<th><em>NULL</em></th>
 <td><em>NULL</em></td>
-<td>5</td>
-<td>Mebellər</td>
-<td>2019-09-15</td>
+<td><em>NULL</em></td>
+<th>5</th>
+<th>Mebellər</th>
+<th>2019-09-15</th>
 </tr>
 </tbody>
 </table>
