@@ -138,6 +138,55 @@ Cədvəli yoxlayarkən məhsul cədvəlində kateqoriyanın adı yox kodu durdu�
     select * from [dbo].[Category]; --kateqoriyalar
     GO
 ```
+<table>
+<thead>
+<tr>	
+<th>Id</th>
+<th>Name</th>
+<th>Description</th>
+<th>CategoryId</th>
+<th>CreatedDate</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Wonlex GW100 Pink</td><td></td><td>4</td><td>2019-09-15</td></tr>
+<tr><td>2</td><td>Wonlex Q50 Charisma BLACK</td><td></td><td>4</td><td>2019-09-15</td></tr>
+<tr><td>3</td><td>Samsung Galaxy S10 Dual (SM-G973) White</td><td></td><td>4</td><td>2019-09-15</td></tr>
+<tr><td>4</td><td>Xiaomi Mi A3 4/128GB White</td><td></td><td>4</td><td>2019-09-15</td></tr>
+<tr><td>5</td><td>Blackview BV1000 yellow</td><td></td><td>4</td><td>2019-09-15</td></tr>
+<tr><td>6</td><td>Huawei Y9 2019 4/64GB Red</td><td></td><td>4</td><td>2019-09-15</td></tr>
+<tr><td>7</td><td>FLY TS114 BLACK</td><td></td><td>4</td><td>2019-09-15</td></tr>
+<tr><td>8</td><td>Blackview BV5500 Pro yellow</td><td></td><td>4</td><td>2019-09-15</td></tr>
+<tr><td>9</td><td>Lenovo TB 7104I/3G -Wi-Fi/7 BLACK</td><td></td><td>3</td><td>2019-09-15</td></tr>
+<tr><td>10</td><td>Samsung Galaxy Tab A 8.0 (SM-T295) Black</td><td></td><td>3</td><td>2019-09-15</td></tr>
+<tr><td>11</td><td>Lenovo TAB E10 TB-X104F/10.1 BLACK</td><td></td><td>3</td><td>2019-09-15</td></tr>
+<tr><td>12</td><td>Lenovo TAB 4 10 LTE (TB-X304L) black</td><td></td><td>3</td><td>2019-09-15</td></tr>
+<tr><td>13</td><td>Samsung Galaxy Tab A (SM-T385) GOLD</td><td></td><td>3</td><td>2019-09-15</td></tr>
+<tr><td>14</td><td>Huawei M5 Lite 3+32 Space Grey</td><td></td><td>3</td><td>2019-09-15</td></tr>
+<tr><td>15</td><td>Apple MacBook Air 13″ MVFK2</td><td></td><td>2</td><td>2019-09-15</td></tr>
+<tr><td>16</td><td>Apple MacBook Air 13″ MVFH2</td><td></td><td>2</td><td>2019-09-15</td></tr>
+<tr><td>17</td><td>Monoblok HP ENVY 27-B170ur i7/16/nv4/1tb128/win10</td><td></td><td>2</td><td>2019-09-15</td></tr>
+<tr><td>18</td><td>Noutbuk Asus Tuf Gaming FX505DD BQ121 </td><td></td><td>2</td><td>2019-09-15</td></tr>
+<tr><td>19</td><td>Noutbuk Acer Predator Helios 300 PH315-52-718G </td><td></td><td>2</td><td>2019-09-15</td></tr>
+<tr><td>20</td><td>Musiqi merkezi SONY MHC-V82D</td><td></td><td>1</td><td>2019-09-15</td></tr>
+<tr><td>21</td><td>Speaker Sony SRS-XB21 Wireless</td><td></td><td>1</td><td>2019-09-15</td></tr>
+<tr><td>22</td><td>JBL Pulse 3 Black</td><td></td><td>1</td><td>2019-09-15</td></tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr><th>Id</th><th>Name</th><th>CreatedDate</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Audio,video</td><td>2019-09-15</td></tr>
+<tr><td>2</td><td>Kompüter və ofis avadanlığı</td><td>2019-09-15</td></tr>
+<tr><td>3</td><td>Planşetlər</td><td>2019-09-15</td></tr>
+<tr><td>4</td><td>Telefonlar, Saatlar və Nömrələr</td><td>2019-09-15</td></tr>
+</tbody>
+</table>
+
+
 
 
 
