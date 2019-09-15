@@ -249,12 +249,12 @@ Son üç tələbəni görmək istəyiriksə o zaman aşağıdakı kimi redaktə 
 
 <dl>
 <dt>Tapşırıq</dt>
-<dd>
- <strong>1.</strong> Ən cavan 5 tələbəni sıra ilə göstərmək.  <br/>
- <strong>2.</strong> Ən yaşlı 4 tələbəni sıra ilə göstərmək.  <br/>
- <strong>3.</strong> Ən gənc 3 xanım tələbənin siyahısını tərtib etmək.  <br/>
- <strong>4.</strong> Ən gənc 4 xanım tələbənin siyahısını tərtib etmək.  <br/>
- <strong>5.</strong> Ən yaşlı 5 kişi tələbəni gəncdən yaşlıya doğru sıra ilə siyahı şəklində tərtib etmək.  
-</dd>
+    <dd>
+        <strong>1.</strong> Ən cavan 5 tələbəni sıra ilə göstərmək.  <br/>
+        <strong>2.</strong> Ən yaşlı 4 tələbəni sıra ilə göstərmək.  <br/>
+        <strong>3.</strong> Ən gənc 3 xanım tələbənin siyahısını tərtib etmək.  <br/>
+        <strong>4.</strong> Ən yaşlı 5 kişi tələbəni gəncdən yaşlıya doğru sıra ilə siyahı şəklində tərtib etmək.  <br/>
+        <strong>5.</strong> Qrup üzrə 6 gənc tələbəni ən gəncdən ən yaşlıya doğru sıralayın.
+    </dd>
 </dl>
 
