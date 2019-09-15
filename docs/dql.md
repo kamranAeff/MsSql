@@ -332,6 +332,24 @@ beləliklə ad ilə soyadı birləşdirib <strong>FullName</strong>  şərti ad�
 <br/><br/><br/>
 > Cədvəllərə(table) şərti adların verilməsi:
 
+Bəzən bir sütunun sözügedən cədvələ aid olduğunu əminliklə qeyd etmək üçün biz cədvəllərə şərti ad veririk çox vaxt misal üçün:
+
+```html
+    USE [Intelect]
+    GO  
+    select
+       t.[Id]
+      ,t.[Name] +' ' + t.[Surname]   FullName
+      ,t.[BirthDate]
+      ,t.[Gender]
+      ,t.[BirthPlace]
+      ,t.[Group]
+	from [dbo].[Students] t;
+    GO
+```
+
+Bu texnika çox vaxt birdən çox eyni sütunlara malik cədvəlləri birləşdirərkən ehtiyyacımız olan ən vacib biliklərdən biridir.
+
 
 
 
