@@ -29,7 +29,7 @@ Verilənlər Bazası(VB) = DataBase (DB)
     - [Limitli seçmə ifadələri](/docs/dql.md#top)
     - [Şərti adların istifadə edilməsi](/docs/dql.md#alias)
     - [Məlumatların səhifə şəklində seçilməsi](/docs/dql.md#paging)
-  - Qoşma operatorları
+  - [Qoşma operatorları](/docs/join.md)
     - Inner join
     - Left join
     - Right join
