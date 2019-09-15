@@ -363,7 +363,7 @@ Səhifələmə məntiqi əvvəlcə programlaşdırma dillərində (və ya yükl�
 
 Səhifələmə üçün ilk öncə lazımi müddəalara diqqət edək:
 - Əgər biz səhifələmə tətbiq etmək istəyiriksə hər hansı bir sorğunun nəicəsinə bu zaman bu nəticə mütləq hər hansı sütunlara görə sıralanmalıdır,yəni <strong>order by</strong> tətbiq olunmalıdır.
-- Səhifələmə edərkən neçə sətir ötürəcəyimizi(pageSize*(pageNumber-1) - əvvəlki səhifə nömrəsi ilə səhifənin uzunluğuna) və növbəti neçə sətri göstərəcəyimizi(pageSize-səhifədəki sətir sayı) qeyd etməliyik.Yəni əgər biz hər səhifədə 10 sətir olan səhifələmə prosesində 5ci səhifədəki məlumatları göstərmək istəsək ilk 40 məlumatı ötürməliyik.<br/>
+- Səhifələmə edərkən neçə sətir ötürəcəyimizi(pageSize*(pageNumber-1) - əvvəlki səhifə nömrəsi ilə səhifənin uzunluğunun hasilinə) və növbəti neçə sətri göstərəcəyimizi(pageSize-səhifədəki sətir sayı) qeyd etməliyik.Yəni əgər biz hər səhifədə 10 sətir olan səhifələmə prosesində 5ci səhifədəki məlumatları göstərmək istəsək ilk 40 məlumatı ötürməliyik.<br/>
 1-ci səhifə 1-10<br/>
 2-ci səhifə 11-20<br/>
 3-ci səhifə 21-30<br/>
