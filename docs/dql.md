@@ -89,6 +89,7 @@ Beləliklə artıq cədvəlimizdə 7 tələbə var.Baxmaq üçün
 
 Komandasını icra edə bilərsiz.
 
+<br/><br/><br/><br/><br/><br/><br/>
 
 <h2 id="search1">Məlumatların şərtlərə görə seçilməsi</h2>
 Real həyatda bəzən milyonlarca məlumatla qarşılaşırıq və bu məlumatların icindən sadecə xüsusi şərtləri ödəyən məlumatları əldə etmə zərurəti ilə qarş-qarşıya qalırıq.Və bu zaman artıq biz xüsusi şərtlər tətbiq edərək məlumat seçməyə başlayırıq.
@@ -149,6 +150,7 @@ Deyəkki "Surname-Soyad" sütunu üzrə axtarış edərkən
 > ... [Surname] like N'%man%'
 
 
+<br/><br/><br/><br/><br/><br/><br/>
 
 
 
@@ -174,6 +176,8 @@ Nəticəyə baxsaq 7 sətir görəcəyik.Lakin 2 fərqli məlumatdan ibarətdir.
     select distinct [Group] from [dbo].[Students];
     GO
 ```
+
+<br/><br/><br/><br/><br/><br/><br/>
 
 
 
@@ -222,7 +226,7 @@ Order By operatoru ilə məlumatları kiçikdən böyüyə,böyükdən kiçiyə 
 
 yəni <strong>order by</strong> operatorundan sonra sütun adı yox random funksiyası olan <strong>newid()</strong> ilə birgə istifadə edirik.
 
-
+<br/><br/><br/><br/><br/><br/><br/>
 
 <h2 id="top">Limitli seçmə ifadələri</h2>
 Xüsusən çox qeydin olduğu cədvəlləri sorğulayarkən sorğu müddəti çox vaxt ala bilir bəzən.Misal üçün bir bankın 10 milyon müştərisi olduğunu fikirləşin.Amma bizə bu müştərilərin 100 dənəsi lazımdır edəcəyimiz əməliyyat üçün.
@@ -247,14 +251,30 @@ Son üç tələbəni görmək istəyiriksə o zaman aşağıdakı kimi redaktə 
     GO
 ```
 
+
+Bəzən isə biz konkret say vermədən məlumatın müəyyən hissəsini (%-ini) göstərmək istəyə bilərik o zaman isə <strong>top</strong> operatorunu <strong>percent</strong> ifadəsi ilə birğə istifadə edirik.Bir öncəki sorğumuzu <q>Son qatılan tələbələrin 50% görmək istəyirik</q> deyə dəyişirik:
+
+```html
+    USE [Intelect]
+    GO  
+    select top(50) percent * from [dbo].[Students]
+    order by id desc;
+    GO
+```
+
 <dl>
-<dt>Tapşırıq</dt>
+    <dt>Tapşırıq</dt>
     <dd>
         <strong>1.</strong> Ən cavan 5 tələbəni sıra ilə göstərmək.  <br/>
         <strong>2.</strong> Ən yaşlı 4 tələbəni sıra ilə göstərmək.  <br/>
         <strong>3.</strong> Ən gənc 3 xanım tələbənin siyahısını tərtib etmək.  <br/>
         <strong>4.</strong> Ən yaşlı 5 kişi tələbəni gəncdən yaşlıya doğru sıra ilə siyahı şəklində tərtib etmək.  <br/>
-        <strong>5.</strong> Qrup üzrə 6 gənc tələbəni ən gəncdən ən yaşlıya doğru sıralayın.
+        <strong>5.</strong> Qruplar üzrə 6 gənc tələbəni ən gəncdən ən yaşlıya doğru sıralayın.
     </dd>
 </dl>
+<br/><br/><br/><br/><br/><br/><br/>
+
+
+
+<h2 id="top">Şərti adların istifadə edilməsi</h2>
 
