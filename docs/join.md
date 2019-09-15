@@ -535,6 +535,8 @@ sonra isə yuxarıdakı <strong>inner join</strong> ilə yazdığımız sorğunu
 </tbody>
 </table>
 
+Nəticəyə baxdığınızda isə-23cü sətrdəki yeni məhsula görə he bir kateqoriyanın uyğun gəlmədiyinə görə <strong>Category</strong> cədvəlinə aid bütün sütunlara <em>NULL</em> mənimsədilib.Bu sorğunun nəticəsində 23 sətir gəldiyi halda,yenidən <strong>inner join</strong>-lə yoxlasanız 22 məlumat gələcək,23cü məhsul uyğun kateqoriya tapa bilmədiyi üçün nəticədə görünməyəcək.
+
 <br/><br/><br/>
 <h2 id="rightjoin">Right join</h2>
 <strong>like</strong>
