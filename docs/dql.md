@@ -145,7 +145,7 @@ Deyəkki "Surname-Soyad" sütunu üzrə axtarış edərkən
 > ... [Surname] like N'Ab%'
 2. "zadə" - ilə bitən soyada malik(Abdullazadə,Əlizadə,və s.) tələbələri seçmək istəyirik,bu zaman şərti aşağıdakı kimi yazmalıyıq:
 > ... [Surname] like N'%zadə'
-2. ya da daxilində "man" - hissəciyi olan soyada malik(Zamanlı,Süleymanlı,və s.) tələbələri seçmək istəyirik,bu zaman şərti aşağıdakı kimi yazmalıyıq:
+3. ya da daxilində "man" - hissəciyi olan soyada malik(Zamanlı,Süleymanlı,və s.) tələbələri seçmək istəyirik,bu zaman şərti aşağıdakı kimi yazmalıyıq:
 > ... [Surname] like N'%man%'
 
 
