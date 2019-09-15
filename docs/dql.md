@@ -351,5 +351,80 @@ Bəzən bir sütunun sözügedən cədvələ aid olduğunu əminliklə qeyd etm�
 Bu texnika çox vaxt birdən çox eyni sütunlara malik cədvəlləri birləşdirərkən ehtiyyacımız olan ən vacib biliklərdən biridir.
 
 
+<br/><br/><br/><br/><br/><br/><br/>
+<h2 id="paging">Məlumatların səhifə şəklində seçilməsi</h2>
 
 
+Ümumiyyətlə iri həcmli məlumatları göstərərkən biz bütün məlumatları birdən göstərmək yerinə həmin məlumatları səhifələrə bölüb səhifələr şəklində göstərməyi üstsn tuturuq.Çünki istifadəçi 1 milyonluq məlumata baxarkən fikrindən daşına bilər.Bu zaman biz verilənlər bazası serverinə 1 milyonluq həcimli məlumatı çekən bahalı bir sorğu atmış oluruq.
+
+Bu kimi halları optimallaşdırmaq və təhlükəni azaltmaq üçün ilk öncə bir səhifəni göstəririk,və səhifə nömrələrini göstəririk.Əhər istifadəçi həmin məlumatlara baxmaqda hələ də maraqlıdırsa,bu zaman 2ci səhifəyə keçid edəcəkdir.
+
+Səhifələmə məntiqi əvvəlcə programlaşdırma dillərində (və ya yüklənən qoşmalarla) mümkün olsa da Sql Serverdə mümkün deyildi.Amma Sql Server 2012 versiya ilə Sql Serverə qatılan səhifələmə məntiqi yükümüzü bir xeyli azaltdı.
+
+Səhifələmə üçün ilk öncə lazımi müddəalara diqqət edək:
+- Əgər biz səhifələmə tətbiq etmək istəyiriksə hər hansı bir sorğunun nəicəsinə bu zaman bu nəticə mütləq hər hansı sütunlara görə sıralanmalıdır,yəni <strong>order by</strong> tətbiq olunmalıdır.
+- Səhifələmə edərkən neçə sətir ötürəcəyimizi(pageSize*(pageNumber-1) - əvvəlki səhifə nömrəsi ilə səhifənin uzunluğuna) və növbəti neçə sətri göstərəcəyimizi(pageSize-səhifədəki sətir sayı) qeyd etməliyik.Yəni əgər biz hər səhifədə 10 sətir olan səhifələmə prosesində 5ci səhifədəki məlumatları göstərmək istəsək ilk 40 məlumatı ötürməliyik.<br/>
+1-ci səhifə 1-10<br/>
+2-ci səhifə 11-20<br/>
+3-ci səhifə 21-30<br/>
+məlumat tutumuna malik olan səhifələri təsəvvür edirik.
+
+Praktiki olaraq səhifələməni tərtib etmək üçün aşağıdakı şablondan istifadə edirik.
+
+```html
+    USE [Intelect]
+    GO  
+    select
+       [Id]
+      ,[Name] +' ' + t.[Surname]   FullName
+      ,[BirthDate]
+      ,[Gender]
+      ,[BirthPlace]
+      ,[Group]
+    from [dbo].[Students] t
+    ORDER BY t.[Id]
+    OFFSET <ötürülməli_olan_sətir_sayı> ROWS  -- qeyd: ötürülməli_olan_sətir_sayı=səhifə_həcmi*(səhifə_nomresi-1)
+    FETCH NEXT <səhifə_həcmi> ROWS ONLY;
+    GO
+```
+
+
+İndi isə tələbə cədvəlimizdəki məlumatları səhifə şəklində göstərməyə alışaq:
+1. Hər səhifədə <strong>4</strong> məlumat görünsün desək 7 məlumat 2 səhifəyə yerləşə bilər.<br/>
+<strong>[1]-ci səhifəni göstərmək</strong> üçün:
+
+```html
+    USE [Intelect]
+    GO  
+    select
+       [Id]
+      ,[Name] +' ' + t.[Surname]   FullName
+      ,[BirthDate]
+      ,[Gender]
+      ,[BirthPlace]
+      ,[Group]
+    from [dbo].[Students] t
+    ORDER BY t.[Id]
+    OFFSET 4*(1-1) ROWS  -- qeyd: ötürülməli_olan_sətir_sayı=səhifə_həcmi*(səhifə_nomresi-1) = 4*(1-1)
+    FETCH NEXT 4 ROWS ONLY;
+    GO
+```
+<br/>
+<strong>[2]-ci səhifəni göstərmək</strong> üçün:
+
+```html
+    USE [Intelect]
+    GO  
+    select
+       [Id]
+      ,[Name] +' ' + t.[Surname]   FullName
+      ,[BirthDate]
+      ,[Gender]
+      ,[BirthPlace]
+      ,[Group]
+    from [dbo].[Students] t
+    ORDER BY t.[Id]
+    OFFSET 4*(2-1) ROWS  -- qeyd: ötürülməli_olan_sətir_sayı=səhifə_həcmi*(səhifə_nomresi-1) = 4*(2-1)
+    FETCH NEXT 4 ROWS ONLY;
+    GO
+```

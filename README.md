@@ -28,7 +28,7 @@ Verilənlər Bazası(VB) = DataBase (DB)
     - [Məlumatların fərqli göstəricilərinə görə sıralanması](/docs/dql.md#order)
     - [Limitli seçmə ifadələri](/docs/dql.md#top)
     - [Şərti adların istifadə edilməsi](/docs/dql.md#alias)
-    - Məlumatların səhifə şəklində seçilməsi
+    - [Məlumatların səhifə şəklində seçilməsi](/docs/dql.md#paging)
   - Qoşma operatorları
     - Inner join
     - Left join
