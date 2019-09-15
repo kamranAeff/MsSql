@@ -138,6 +138,16 @@ Bəzən isə biz məlumatın hamisini yox, bir hissəsini xatırlaya bilirik və
     GO
 ```
 
+Yəni mətn tipli məlumatları sorğulayarkən bərabərdir(=) işarətindən savayı like operatorundan da istifadə edilir ki,bu operator vasitəsi ilə,axtardığımız sözlə başlayan,axtardığımız sözlə bitən və yaxut da içində axtardığımız söz olan məlumatların tapılması üçün istifadə edirik.
+
+Deyəkki "Surname-Soyad" sütunu üzrə axtarış edərkən
+1. "Ab" - ilə başlayan soyada malik(Abdullayev,Abbasov,və s.) tələbələri seçmək istəyirik,bu zaman şərti aşağıdakı kimi yazmalıyıq:
+> ... [Surname] like N'Ab%'
+2. "zadə" - ilə bitən soyada malik(Abdullazadə,Əlizadə,və s.) tələbələri seçmək istəyirik,bu zaman şərti aşağıdakı kimi yazmalıyıq:
+> ... [Surname] like N'%zadə'
+2. ya da daxilində "man" - hissəciyi olan soyada malik(Zamanlı,Süleymanlı,və s.) tələbələri seçmək istəyirik,bu zaman şərti aşağıdakı kimi yazmalıyıq:
+> ... [Surname] like N'%man%'
+
 
 
 
