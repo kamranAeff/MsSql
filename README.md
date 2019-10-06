@@ -78,3 +78,4 @@ Verilənlər Bazası(VB) = DataBase (DB)
 - http://hrzafer.com/sql-dersleri
 - http://www.java2s.com/Tutorial/SQLServer/CatalogSQLServer.htm
 - https://www.yazilimkodlama.com/sql-server-2/sql-sorgulari-ve-ornekleri/
+- https://www.mssqltips.com/sqlservertip/1145/date-and-time-conversions-using-sql-server/
